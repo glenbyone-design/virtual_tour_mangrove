@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#276b1e",
+              "gold": "#d4af37",
+              "background-light": "#f6f8f6",
+              "background-dark": "#151f13",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .certificate-border {
+            border: 2px solid #d4af37;
+            position: relative;
+        }
+        .certificate-border::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid #d4af37;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-primary/10">
+<div class="text-primary dark:text-slate-100 flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">E-Sertifikat Digital</h2>
+</div>
+<main class="flex-1 p-4 md:p-8 max-w-4xl mx-auto w-full">
+<!-- Certificate Card -->
+<div class="certificate-border bg-white dark:bg-background-dark rounded-xl p-6 md:p-12 shadow-2xl relative overflow-hidden">
+<!-- Decorative Mangrove Silhouette Background -->
+<div class="absolute bottom-0 left-0 w-full h-48 opacity-10 pointer-events-none bg-center bg-no-repeat bg-contain" data-alt="Artistic mangrove forest silhouette illustration at bottom" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCf6yaxo--Z-kMPsC5_78jJfESITE91xJb73LrtARAIRHWwkBZazND7wo9EiJ3Y4xbvcAgH7l46JA1mXnsdHw4kel5Gu5MvMBlj-Nl0--VJhV9uM7KVQVOGBdfnuimwC7Pgnj1kAHlP-94g8nm3zdMVR4kR50VjuhqAUY3nE3inzh_z6S7QPh-Zd6h9SiNXyuQ6ancSnEA-y8nYpTEpdoMN0Odn_W4lx8iPTKGrr9Oh065Ns540fPLWOgTRoFahnlVfX9mjPJ6TgAs");'>
+</div>
+<!-- Logo Section -->
+<div class="flex justify-center mb-8">
+<div class="w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center p-2 border border-gold/30">
+<img alt="Logo Waropen" class="w-full h-full object-contain" data-alt="Official logo of Waropen Regency Government" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTxCkmr2oxsZrYqY9LEqi0InyZDvBXEGvmL-0QqC9YnOvQGkmbUwSUpv6vc4vH4L9tneELhxJI5NxqTIv7ZoUXjsYXs8HynZBiDFF4I0FBxWYKhQdg7FhmQEHmLg5JMBGxD16oHkidPwr0rz3ZNcJVCwntLucGR-3HOmJWey399lNk-diEAIJsls5YIKj61EXrsyzNdwJAqkjr6uxEA_x5z406bM-1IvJRtMDEbHkV2foGA4LbDtos645niLyqlgy-cLTB_MbdrQ"/>
+</div>
+</div>
+<!-- Title Section -->
+<div class="text-center space-y-2 mb-10">
+<h3 class="text-gold text-sm font-semibold tracking-widest uppercase">Piagam Penghargaan</h3>
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl md:text-5xl font-bold tracking-tight">Sertifikat Penghargaan</h1>
+<div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+</div>
+<!-- Recipient Section -->
+<div class="text-center space-y-6 relative z-10">
+<p class="text-slate-600 dark:text-slate-400 text-lg">Dengan bangga diberikan kepada:</p>
+<h2 class="text-2xl md:text-4xl font-bold text-primary dark:text-gold italic">[Nama Pengguna]</h2>
+<p class="text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                        Atas kontribusinya yang luar biasa dalam mendukung konservasi <span class="font-semibold text-primary dark:text-green-400">Hutan Mangrove Kabupaten Waropen</span> melalui kepemilikan Digital Conservation Pass.
+                    </p>
+</div>
+<!-- Details Section -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-primary/10 pt-8">
+<div class="text-center md:text-left">
+<p class="text-slate-500 dark:text-slate-500 text-xs uppercase tracking-widest mb-1">Tanggal Penerbitan</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium">24 Mei 2024</p>
+</div>
+<div class="text-center md:text-right">
+<p class="text-slate-500 dark:text-slate-500 text-xs uppercase tracking-widest mb-1">ID Sertifikat</p>
+<p class="text-slate-900 dark:text-slate-100 font-mono font-medium">WR-2024-001-XYZ</p>
+</div>
+</div>
+<!-- Signature/Seal Area -->
+<div class="mt-12 flex flex-col items-center">
+<div class="relative">
+<div class="absolute -top-8 -left-8 w-24 h-24 border-2 border-primary/20 rounded-full flex items-center justify-center rotate-12 opacity-50">
+<span class="text-[10px] font-bold text-primary text-center">OFFICIAL<br/>CONSERVATION<br/>SEAL</span>
+</div>
+<div class="text-center">
+<p class="text-slate-900 dark:text-slate-100 font-bold border-b border-slate-900 dark:border-slate-100 pb-1 inline-block px-4">Kepala Dinas Lingkungan Hidup</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Kabupaten Waropen</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-lg active:scale-95">
+<span class="material-symbols-outlined">download</span>
+                    Download PDF
+                </button>
+<button class="flex items-center justify-center gap-2 bg-white dark:bg-primary/10 border border-primary text-primary dark:text-slate-100 font-bold py-3 px-8 rounded-lg transition-all hover:bg-primary/5 active:scale-95">
+<span class="material-symbols-outlined">share</span>
+                    Bagikan Sertifikat
+                </button>
+</div>
+</main>
+<!-- Footer Footer -->
+<footer class="p-8 text-center text-slate-500 dark:text-slate-500 text-sm">
+<p>© 2024 Konservasi Mangrove Waropen. Seluruh hak cipta dilindungi.</p>
+</footer>
+</div>
+</body></html>

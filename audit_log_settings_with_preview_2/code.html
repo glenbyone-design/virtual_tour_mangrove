@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Log Settings - Mangrove Conservation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #276b1e44;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header & Tabs -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Audit Log Settings</h1>
+</div>
+<div class="flex px-4 gap-8">
+<button class="pb-3 pt-2 text-sm font-medium text-slate-500 dark:text-slate-400 border-b-2 border-transparent">
+                General
+            </button>
+<button class="pb-3 pt-2 text-sm font-bold text-primary border-b-2 border-primary">
+                Audit Log
+            </button>
+<button class="pb-3 pt-2 text-sm font-medium text-slate-500 dark:text-slate-400 border-b-2 border-transparent">
+                Security
+            </button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto custom-scrollbar pb-24">
+<!-- Report Configuration Section -->
+<section class="p-4 space-y-6">
+<div class="flex flex-col gap-1">
+<h2 class="text-lg font-bold">Report Configuration</h2>
+<p class="text-xs text-slate-500 dark:text-slate-400">Configure how and when your conservation audit logs are delivered.</p>
+</div>
+<!-- Toggle Row -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/10">
+<div class="flex flex-col">
+<span class="font-medium">Automatic Weekly Log Reports</span>
+<span class="text-xs text-slate-500">Receive a PDF summary of all activities</span>
+</div>
+<label class="relative flex h-7 w-12 cursor-pointer items-center rounded-full bg-slate-300 dark:bg-slate-700 p-1 has-[:checked]:bg-primary transition-colors">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="h-5 w-5 rounded-full bg-white shadow-sm transition-transform peer-checked:translate-x-5"></div>
+</label>
+</div>
+<!-- Multi-select Roles -->
+<div class="space-y-3">
+<label class="text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">groups</span> Send to Roles
+                </label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full text-xs font-medium bg-primary text-white border border-primary">Super Admin</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30">Content Editor</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30">Viewer</button>
+</div>
+</div>
+<!-- Email Input Chips -->
+<div class="space-y-3">
+<label class="text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">alternate_email</span> Recipient Email Addresses
+                </label>
+<div class="flex flex-wrap items-center gap-2 p-3 rounded-lg border border-primary/20 bg-primary/5 min-h-[48px]">
+<div class="flex items-center gap-1 bg-primary px-2 py-1 rounded text-xs text-white">
+                        admin@mangrove.org
+                        <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</div>
+<div class="flex items-center gap-1 bg-primary px-2 py-1 rounded text-xs text-white">
+                        reports@forest.io
+                        <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</div>
+<input class="bg-transparent border-none outline-none text-xs flex-1 min-w-[80px] focus:ring-0" placeholder="Add email..." type="text"/>
+</div>
+</div>
+<!-- Schedule Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Frequency</label>
+<select class="w-full bg-primary/5 border border-primary/20 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary">
+<option>Daily</option>
+<option selected="">Weekly</option>
+<option>Monthly</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Day</label>
+<select class="w-full bg-primary/5 border border-primary/20 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary">
+<option selected="">Monday</option>
+<option>Wednesday</option>
+<option>Friday</option>
+</select>
+</div>
+<div class="space-y-2 col-span-2">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">Time</label>
+<div class="relative">
+<input class="w-full bg-primary/5 border border-primary/20 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary" type="text" value="08:00 AM"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary">schedule</span>
+</div>
+</div>
+</div>
+<!-- Preview Section -->
+<div class="p-4 rounded-xl border border-dashed border-primary/40 bg-primary/5">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">event_upcoming</span>
+<div class="space-y-1">
+<p class="text-sm font-semibold">Next Scheduled Report</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                            Monday, Oct 27, 2025 at <span class="text-primary font-bold">08:00 AM</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3 pt-4">
+<button class="w-full py-3 px-4 border border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-colors">
+                    Send Test Report
+                </button>
+<button class="w-full py-3 px-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+                    Save Changes
+                </button>
+</div>
+</section>
+<!-- Quick Insights Section -->
+<section class="p-4 mt-4 space-y-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-500">Quick Insights</h3>
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-primary/5 p-3 rounded-xl border border-primary/10 flex flex-col items-center">
+<span class="text-xl font-bold text-primary">1,284</span>
+<span class="text-[10px] text-slate-500 uppercase font-bold">Total Logs</span>
+</div>
+<div class="bg-primary/5 p-3 rounded-xl border border-primary/10 flex flex-col items-center">
+<span class="text-xl font-bold text-red-500">12</span>
+<span class="text-[10px] text-slate-500 uppercase font-bold text-center leading-none">Failed Logins</span>
+</div>
+<div class="bg-primary/5 p-3 rounded-xl border border-primary/10 flex flex-col items-center">
+<span class="text-xl font-bold text-orange-500">3</span>
+<span class="text-[10px] text-slate-500 uppercase font-bold">Alerts</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-primary/20 px-4 py-2 flex items-center justify-between z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">list_alt</span>
+<span class="text-[10px] font-medium">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">assessment</span>
+<span class="text-[10px] font-medium">Reports</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</a>
+</nav>
+</body></html>

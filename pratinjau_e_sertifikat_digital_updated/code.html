@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "gold": "#d4af37",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .certificate-border {
+            border: 20px solid transparent;
+            border-image: linear-gradient(45deg, #276b1e, #d4af37, #276b1e) 1;
+        }
+        .mangrove-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(39, 107, 30, 0.1) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/10 justify-between sticky top-0 z-50">
+<div class="text-primary dark:text-primary size-12 flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Digital Certificate</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center p-4 @container">
+<div class="max-w-4xl w-full bg-background-light dark:bg-[#1a2618] rounded-xl shadow-2xl overflow-hidden relative border border-primary/20">
+<div class="absolute inset-0 mangrove-pattern opacity-20 pointer-events-none"></div>
+<div class="relative p-8 md:p-12 flex flex-col items-center text-center border-[12px] border-double border-gold/30 m-4 rounded-lg">
+<div class="mb-6">
+<div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-5xl">eco</span>
+</div>
+<p class="text-primary font-bold tracking-widest uppercase text-sm">Mangrove Waropen Protection Systems</p>
+</div>
+<h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-slate-100 mb-2 tracking-tight">CERTIFICATE OF APPRECIATION</h1>
+<div class="w-32 h-1 bg-gold my-6"></div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-2">This certificate is proudly awarded to</p>
+<h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">[User Name]</h2>
+<p class="text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
+                    For their exceptional contribution as a <br/>
+<span class="font-bold text-gold">Nature Guardian &amp; Conservation Supporter</span>
+</p>
+<div class="my-8 p-6 bg-primary/5 rounded-xl border border-primary/10 max-w-xl">
+<p class="text-sm md:text-base text-slate-600 dark:text-slate-400">
+                        Supporting 360° Virtual Tours and Nature Documentary Videos in Waropen Forest. 
+                        Your dedication ensures the preservation of our vital mangrove ecosystems for future generations.
+                    </p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-end w-full mt-12 gap-8 md:gap-0">
+<div class="flex flex-col items-center border-t border-slate-400 dark:border-slate-600 pt-2 min-w-[200px]">
+<p class="text-slate-900 dark:text-slate-100 font-bold">Head of Waropen Agency</p>
+<p class="text-xs text-slate-500 uppercase tracking-widest">Environmental Agency</p>
+</div>
+<div class="relative flex items-center justify-center">
+<div class="absolute w-32 h-32 bg-gold/20 rounded-full animate-pulse"></div>
+<div class="w-24 h-24 bg-gold rounded-full flex flex-col items-center justify-center text-background-dark border-4 border-gold shadow-lg z-10">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<span class="text-[10px] font-bold uppercase">Official Seal</span>
+</div>
+</div>
+<div class="flex flex-col items-center text-right md:items-end border-t border-slate-400 dark:border-slate-600 pt-2 min-w-[200px]">
+<p class="text-slate-900 dark:text-slate-100 font-bold">October 24, 2023</p>
+<p class="text-xs text-slate-500 uppercase tracking-widest">ID: MWPS-2023-001</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4 w-full max-w-md">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">download</span>
+                Download PDF
+            </button>
+<button class="flex-1 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 font-bold py-4 rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">share</span>
+                Share to Social
+            </button>
+</div>
+</main>
+<nav class="flex gap-2 border-t border-primary/10 bg-background-light dark:bg-[#1a2618] px-4 pb-6 pt-2 sticky bottom-0">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">home</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-wide">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">workspace_premium</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-wide">Certificates</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-wide">Profile</p>
+</a>
+</nav>
+</body></html>

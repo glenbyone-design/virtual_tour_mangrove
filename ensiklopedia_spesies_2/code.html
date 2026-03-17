@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Top Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 dark:border-primary/20">
+<div class="flex items-center p-4 justify-between max-w-2xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Ensiklopedia Mangrove</h1>
+<p class="text-xs text-primary font-medium">Virtual Visit Waropen</p>
+</div>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-2xl mx-auto w-full pb-24">
+<!-- Search and Filter Section -->
+<div class="px-4 py-6 space-y-4">
+<label class="relative flex flex-col w-full group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-primary/60 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-12 pl-12 pr-4 rounded-xl border-none bg-primary/5 dark:bg-primary/10 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 text-sm" placeholder="Cari nama lokal atau ilmiah..." value=""/>
+</label>
+<!-- Horizontal Categories -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-4 text-white text-sm font-medium">
+                    Semua
+                </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20">
+                    Rhizophora <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20">
+                    Avicennia <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20">
+                    Sonneratia <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Catalog Grid -->
+<div class="px-4 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold tracking-tight">Katalog Spesies Waropen</h2>
+<span class="text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded">24 Spesies</span>
+</div>
+<!-- Species Cards -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex h-32">
+<div class="w-1/3 h-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of lush green mangrove leaves and roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNLMtEhNhEAxOnXm-Yzgk_nTs1HuDgmxduq5PAw-YbaUmsZhJSKbQqxByvDN-hrWhBflpnxP1KC3x1AqlJjb2OQ3EZDTjH1C0xR3gHJzFp4E0ocmtkT_dKZ8FaHuXJE0V5XpeUfkJeB06fMG6Ww0863q6yq3wW2u9hLN0Tk-_Qm7378neGNnSBWNN1LdjhtyhFAVkvEPmG8w7i7u85H3gDwVy_ieGGoKg_nMvsl8feRXYOAn1evqhcN7FzYZF5oraZ28In99c5K8g"/>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Bakau Kurap</h3>
+<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
+</div>
+<p class="text-xs italic text-primary font-medium">Rhizophora mucronata</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Memiliki akar tunjang yang kuat dan buah berbentuk silindris panjang.</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex h-32">
+<div class="w-1/3 h-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Mangrove forest roots in clear coastal water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYtYBtD9yTQAEbX_4meUnxxeUBXtDJEXdwm7_0gKAHFkTcRKJL5wuHKNqctBAMMA9_oHDjNrw-YM9zsMSSu0k_ecoO8dt4KZtHGIqDL_S0sRT2_bjlQgOTkGitbEqqwdvNassL8euAKpGr-IgqSxdq05OCOdMkuvlZDND6z5zdDjMssiuYolqNQwYiE3rGQGUJ-suTTS-jz4dSfn41cFk9NrQHFxlFO0BkiKnChWbz-A75SDSpPZw0MsWho35Kd63277IlBmdPvik"/>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Api-api Putih</h3>
+<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
+</div>
+<p class="text-xs italic text-primary font-medium">Avicennia marina</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Dikenal dengan akar napas yang muncul ke permukaan tanah seperti pensil.</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex h-32">
+<div class="w-1/3 h-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Sonneratia alba mangrove tree with fruit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNIsmtA8iWmGqrIbypTyhv_T8EdvWUXZDHGE4xQsnwwX_-D2SK8egl2WSKNe21_DDH1WicD2mP2_ue1rMR3LMBQ3jdw1Klh9crbuvcDg4G81g1YCYdZw6oI46pFnE7i45Dc2Y67boJo7AKJpuFvnCBczlGO5rkDf0C4C_eCA07zUIv3CxdiT5d8zcvpDu1J0Oh6rOegUq_KaBghYeWnqHtB_E2tQH-mtUrl3D0pLY1lQK2kS_q6MSBoqczN9gs_WttlpQ2Y9e2sEM"/>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Pedada</h3>
+<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
+</div>
+<p class="text-xs italic text-primary font-medium">Sonneratia alba</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Memiliki buah berbentuk bulat seperti bola yang dapat dimakan.</p>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex h-32">
+<div class="w-1/3 h-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Dense mangrove foliage under bright sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1jm9kFI9PdfB3JsfuSoJlXsM8BooAdyLMnUvwk_lFwfecuM_t6fnWkpi1XGm3OwcNZFwbMqDPE9FpV4WUX6Qk1pmLSwY2GJZLarlyvXShzjmogssQ0sxNR9U9utEY01ugEWcAniZe1C5--95TRi_dSi-CTDx6BIWNNObpE3RkR2USY6a54c5f-d33vbnrD9S_u3_TTBWhC_cFzOM9j1crlXMsEBDL7nB5mGeoR6eICQJyMm-046dCFixY61SXqXRKNTxdSTJMnxM"/>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Tumu Putih</h3>
+<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
+</div>
+<p class="text-xs italic text-primary font-medium">Bruguiera cylindrica</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Pohon ini sering ditemukan di zona mangrove bagian tengah.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-primary/10 dark:border-primary/20 px-2 pb-6 pt-2 z-50">
+<div class="flex justify-around max-w-2xl mx-auto">
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 w-16" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium">Beranda</p>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-primary w-16" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">menu_book</span>
+<p class="text-[10px] font-bold">Edukasi</p>
+</a>
+<div class="relative -top-4">
+<div class="bg-primary rounded-full p-4 text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-2xl">map</span>
+</div>
+</div>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 w-16" href="#">
+<span class="material-symbols-outlined">explore</span>
+<p class="text-[10px] font-medium">Tur</p>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 w-16" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium">Profil</p>
+</a>
+</div>
+</nav>
+</body></html>

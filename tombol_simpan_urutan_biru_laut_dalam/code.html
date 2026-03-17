@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .drag-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1">Urutkan Metode Pembayaran</h2>
+</div>
+<!-- Instructions -->
+<div class="px-4 pb-4 pt-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Tahan dan geser untuk mengurutkan</h3>
+<p class="text-slate-500 dark:text-primary/70 text-sm mt-1">Metode teratas akan menjadi pilihan utama Anda.</p>
+</div>
+<!-- List of Payment Methods -->
+<div class="flex flex-col gap-1 px-2">
+<!-- Normal Item (Static) -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark/50 border border-transparent px-4 min-h-[80px] py-2 justify-between rounded-xl">
+<div class="flex items-center gap-4">
+<div class="bg-slate-200 dark:bg-primary/20 flex items-center justify-center rounded-lg size-14 overflow-hidden">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary">credit_card</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal line-clamp-1">Kartu Debit Mandiri</p>
+<p class="text-slate-500 dark:text-primary/60 text-sm font-normal leading-normal">**** 8890</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary">drag_indicator</span>
+</div>
+</div>
+<!-- Elevated Dragging State Item -->
+<div class="flex items-center gap-4 bg-slate-100 dark:bg-primary/30 border-2 border-primary/40 px-4 min-h-[80px] py-2 justify-between rounded-xl scale-[1.05] drag-shadow z-20 relative my-2">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 flex items-center justify-center rounded-lg size-14 overflow-hidden border border-primary/30">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance_wallet</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-normal line-clamp-1">OVO Digital Wallet</p>
+<p class="text-slate-500 dark:text-primary/80 text-sm font-normal leading-normal">0812****4455</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-primary">drag_indicator</span>
+</div>
+</div>
+<!-- Normal Item (Static) -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark/50 border border-transparent px-4 min-h-[80px] py-2 justify-between rounded-xl opacity-60">
+<div class="flex items-center gap-4">
+<div class="bg-slate-200 dark:bg-primary/20 flex items-center justify-center rounded-lg size-14 overflow-hidden">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary">payments</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal line-clamp-1">GoPay</p>
+<p class="text-slate-500 dark:text-primary/60 text-sm font-normal leading-normal">0812****4455</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary">drag_indicator</span>
+</div>
+</div>
+<!-- Normal Item (Static) -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark/50 border border-transparent px-4 min-h-[80px] py-2 justify-between rounded-xl opacity-60">
+<div class="flex items-center gap-4">
+<div class="bg-slate-200 dark:bg-primary/20 flex items-center justify-center rounded-lg size-14 overflow-hidden">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary">account_balance</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal line-clamp-1">Transfer Bank BCA</p>
+<p class="text-slate-500 dark:text-primary/60 text-sm font-normal leading-normal">Virtual Account</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary">drag_indicator</span>
+</div>
+</div>
+</div>
+<!-- Spacer for Scroll -->
+<div class="flex-grow"></div>
+<!-- Footer Action Button -->
+<div class="p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-primary/20 sticky bottom-0">
+<button class="w-full text-white font-bold py-4 rounded-xl transition-colors shadow-lg active:scale-[0.98] hover:opacity-90" style="background-color: #005f73;">
+                Simpan Urutan
+            </button>
+</div>
+</div>
+</body></html>

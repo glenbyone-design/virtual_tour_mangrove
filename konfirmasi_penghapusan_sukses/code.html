@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Konfirmasi Penghapusan</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-hidden">
+<!-- Header -->
+<div class="flex items-center px-4 py-4 justify-between border-b border-primary/10">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100" data-icon="arrow_back">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Konfirmasi</h2>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 flex-col items-center justify-center px-6 py-12 text-center">
+<!-- Success Icon/Illustration Container -->
+<div class="relative mb-8">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative flex items-center justify-center w-32 h-32 bg-primary/10 rounded-full border-2 border-primary/20">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1, 'wght' 400;">check_circle</span>
+</div>
+</div>
+<!-- Message Section -->
+<div class="flex flex-col items-center gap-4 max-w-xs">
+<h1 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight tracking-tight">
+                    Metode Pembayaran Dihapus
+                </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">
+                    Metode pembayaran Anda telah berhasil dihapus dari sistem kami secara aman.
+                </p>
+</div>
+<!-- Decorative Image (Abstract) -->
+<div class="mt-12 w-full max-w-[280px] aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center overflow-hidden border border-primary/10" data-alt="Abstract green geometric pattern representing security and nature">
+<div class="grid grid-cols-3 gap-2 opacity-30">
+<div class="w-12 h-12 rounded-lg bg-primary"></div>
+<div class="w-12 h-12 rounded-lg bg-primary/40 mt-4"></div>
+<div class="w-12 h-12 rounded-lg bg-primary/60"></div>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="flex flex-col gap-3 px-6 py-8">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 bg-primary text-white text-base font-semibold transition-all hover:bg-primary/90 active:scale-[0.98]">
+<span class="truncate">Kembali ke Pengaturan</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors">
+<span class="truncate">Butuh bantuan?</span>
+</button>
+</div>
+<!-- Safe Area Spacer for Mobile -->
+<div class="h-6 bg-background-light dark:bg-background-dark"></div>
+</div>
+</body></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4">
+<!-- Mobile Device Frame Mockup -->
+<div class="relative w-full max-w-[380px] h-[760px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden ring-4 ring-primary/20">
+<!-- Background Image (Blurred Mangrove Forest) -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover blur-sm scale-110 brightness-75" data-alt="Blurred lush green mangrove forest landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL3_wkyLVmkjLDC_tGbzTOdYR79yYvU-PXS2Rf20IjJTXqsEcm6RiOANFPSMvex_7BkA7IoA3d0KXdPhNHEuCEBVflh8UMlhmBrb4NHHMbILsrxQZ3ZoRkTxItzW5GgVnXG5H_JTEqKU1dWl48eDAV81pnCb0IOn7gJzJYJyf92JPhE6ZyjseN3mqc8av1CmC09AtBj_nayCY8wV7iCHxtDXQ7KDy1B1hZDvUA5Z9fv08OT13hsFUKte3SaHABcssaOc4udkTt3ys"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+</div>
+<!-- Status Bar -->
+<div class="absolute top-0 w-full h-12 flex justify-between items-center px-8 z-20">
+<span class="text-white text-sm font-medium">10:45</span>
+<div class="flex items-center gap-1.5">
+<span class="material-icons text-white text-sm">signal_cellular_alt</span>
+<span class="material-icons text-white text-sm">wifi</span>
+<span class="material-icons text-white text-sm">battery_full</span>
+</div>
+</div>
+<!-- Lock Screen Clock -->
+<div class="absolute top-24 w-full text-center z-10">
+<h1 class="text-white text-7xl font-light tracking-tight">10:45</h1>
+<p class="text-white/80 text-lg mt-2 font-light">Senin, 23 Oktober</p>
+</div>
+<!-- Notification Center Area -->
+<div class="absolute inset-x-0 bottom-32 px-4 space-y-3 z-20">
+<!-- Push Notification Card -->
+<div class="bg-white/10 dark:bg-primary/10 backdrop-blur-xl border border-white/20 dark:border-primary/20 rounded-2xl p-4 shadow-lg">
+<div class="flex items-start gap-3">
+<!-- App Logo / Icon -->
+<div class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-inner">
+<span class="material-icons text-white text-2xl">nature_people</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<span class="text-primary font-semibold text-xs uppercase tracking-wider">Mangrove Waropen</span>
+<span class="text-white/50 text-[10px]">Baru saja</span>
+</div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-icons text-green-400 text-sm">check_circle</span>
+<h3 class="text-white font-bold text-sm">Pembayaran Disetujui!</h3>
+</div>
+<p class="text-white/90 text-xs leading-relaxed">
+                            Selamat datang di akses Premium Mangrove Waropen. Klik untuk mulai menjelajah.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Hint Text -->
+<div class="text-center pt-4">
+<p class="text-white/40 text-[10px] font-medium tracking-widest uppercase">Klik untuk membuka</p>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-white/30 rounded-full z-20"></div>
+<!-- Camera Notch -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-slate-800 rounded-b-2xl z-30"></div>
+</div>
+</body></html>

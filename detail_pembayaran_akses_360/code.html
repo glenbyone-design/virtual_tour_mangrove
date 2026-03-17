@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Details - Mangrove Waropen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Payment Details</h2>
+</div>
+<!-- Order Summary Section -->
+<div class="px-4 pt-6">
+<h2 class="text-slate-900 dark:text-slate-100 text-[22px] font-bold leading-tight tracking-tight pb-4">Order Summary</h2>
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-primary/10 border border-primary/10 p-4 shadow-sm">
+<div class="flex flex-col gap-2 flex-[2_2_0px]">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">360° Content &amp; Nature Documentaries Access</p>
+<p class="text-primary dark:text-primary text-sm font-medium leading-normal">Mangrove Waropen Digital Pass</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-1 shrink-0" data-alt="Aerial view of dense green mangrove forest canopy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDst3egLA3CGt7WC2fwbkwAmta8BQMY52aTgV6Pa49H1ubpGHWdhETwG7obAjIP1kXJW5Y9sAaVlUudieq4g4yBe_1d5gx0DntJX724eD-tuxe20Q9aStw795Do4QSlQoFdb6_SplQwS_HQ3N2w63sN24a1F6TTjZ31TYYWOXGVlict1qwgluhFTZxMCXa55QgjPU44FA7ORsiBt4Ca2vQhjn6QgDUE0MYHy6v1aP-nqIy3fNy9StPh1bLHxotvNfC6ts-PwaXrwUU");'>
+</div>
+</div>
+</div>
+<!-- Pricing Details -->
+<div class="p-4 mt-2">
+<div class="bg-white dark:bg-primary/5 rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center py-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Plan</p>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold">Premium Access (Monthly)</p>
+</div>
+<div class="flex justify-between items-center py-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Subtotal</p>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">Rp 135.135</p>
+</div>
+<div class="flex justify-between items-center py-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Tax (11%)</p>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">Rp 14.865</p>
+</div>
+<div class="h-px bg-slate-200 dark:bg-primary/20 my-1"></div>
+<div class="flex justify-between items-center pt-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Total Amount</p>
+<p class="text-primary dark:text-primary text-lg font-bold">Rp 150.000</p>
+</div>
+</div>
+</div>
+<!-- Payment Method Section -->
+<div class="px-4 pt-6">
+<h2 class="text-slate-900 dark:text-slate-100 text-[22px] font-bold leading-tight tracking-tight pb-4">Payment Method</h2>
+<div class="flex flex-col gap-3">
+<!-- Selected Method -->
+<div class="flex items-center justify-between p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center p-1">
+<img alt="QRIS Logo" class="max-h-full" data-alt="Official QRIS payment method logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6FIPVMlf_afqLaqEin34maWQ7aIBJ2vIsQTaIemjYH0Q9ruAjetxqxF6bmBPFsGocurSEoPtC4yffYjDLbdSnaAh3CUo8GN0i3jFceJH7wS7DRggz6n0SlUG8QgXvZCWSlgjaVsxPZu7YoZl3dhgDNXO4SVLPrCFIhXBvUycBignmq9Nc3lsChe93DsJYGsiuIcHxIhLszpc5nMGKViv1dimEFoj9rrh2Z3IZfq4zjlqw6YiOgLd6c_DQEl0YCDmu8YOwU0tIuNk"/>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 font-bold text-sm">QRIS</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Instant payment via any bank app</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<!-- Other Methods (Placeholder) -->
+<div class="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-primary/20 bg-transparent opacity-60">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">account_balance</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 font-medium text-sm">Virtual Account</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Information Note -->
+<div class="p-4 mt-4">
+<div class="flex gap-3 p-4 bg-primary/10 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">info</span>
+<p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+                    Access will be granted immediately after successful payment verification. You will receive an email confirmation with your digital pass.
+                </p>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="mt-auto p-4 pb-8">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span>Pay Now Rp 150.000</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-slate-400 text-[10px] mt-4 uppercase tracking-widest">Secure Encrypted Payment</p>
+</div>
+</div>
+</body></html>

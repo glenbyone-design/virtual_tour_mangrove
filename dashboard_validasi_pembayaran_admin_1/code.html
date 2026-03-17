@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard - Validasi Pembayaran</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                        "surface-dark": "#1e2b1c",
+                        "border-dark": "#2d412a",
+                        "text-muted": "#a0bf9b"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-border-dark px-4 py-3">
+<div class="flex items-center justify-between max-w-5xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer">arrow_back</span>
+<h1 class="text-lg font-bold tracking-tight">Validasi Pembayaran</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Tabs Navigation -->
+<nav class="bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-border-dark">
+<div class="max-w-5xl mx-auto flex gap-8 px-4">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary py-3 text-primary font-semibold" href="#">
+<span class="text-sm">Pending (12)</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent py-3 text-text-muted hover:text-slate-100 transition-colors" href="#">
+<span class="text-sm">Berhasil</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent py-3 text-text-muted hover:text-slate-100 transition-colors" href="#">
+<span class="text-sm">Ditolak</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-4 max-w-5xl mx-auto w-full">
+<div class="flex flex-col gap-4">
+<h2 class="text-slate-500 dark:text-text-muted text-xs font-bold uppercase tracking-widest pt-2">Daftar Menunggu Persetujuan</h2>
+<!-- Validation Card 1 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden shadow-sm">
+<div class="md:flex">
+<div class="md:w-1/3 h-48 md:h-auto relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Screenshot of a bank transfer receipt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkcLhFxhPr9vzmkqvAtQFfEkzJERFhvImn-0mEpp44LFv1BdL-K4zivcqUk8mju51Mox09wJemmPkE7NepjXhJeXSLevXeWL8X7-pkYUjh3N992GyYO3P2GFASAZGLiyYii6AwdnxkoaqOGbR41l59kpPIWmgU6bJ4HGrVbGeJ2-qDpLDqeZHyrNamcaDRg7LsgKY2KtYD0R7zkBJONCWmgmejRZmeX_nz89o05Z8nFLwUgj9YR3IVs4dAX2V8ggIY9igAQvaUWig')"></div>
+<div class="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Bukti Transfer</div>
+</div>
+<div class="p-4 md:w-2/3 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold">Budi Santoso</h3>
+<p class="text-primary text-sm font-medium">Paket Pro - Rp 150.000</p>
+</div>
+<span class="bg-yellow-500/20 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full border border-yellow-500/30">PENDING</span>
+</div>
+<div class="flex items-center gap-2 mb-4 bg-primary/10 border border-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-xs text-text-muted">OCR: <span class="text-slate-100 font-semibold">Berhasil Terdeteksi (Bank Mandiri)</span></p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                Verifikasi
+                            </button>
+<button class="flex-1 bg-red-600/20 hover:bg-red-600/30 text-red-500 border border-red-600/30 font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">close</span>
+                                Tolak
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Validation Card 2 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden shadow-sm">
+<div class="md:flex">
+<div class="md:w-1/3 h-48 md:h-auto relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Mobile banking receipt application screenshot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPCr5niTfk2uouiD7FNSlD7NutBQLExCFxLYXBfqzaNsOPVEekHOckverW59MzcOpjHUghQYz15XWP7oYPw338IbPc1GsI1bEHeXQCK_hMOz5WNHK57kWri_19VbheKwaIF3SYff_y5aX67bnWVjNy5IZspCMAjckPQZTNTI6JazvAM2vlXfnCtu8Om2SrIEvrnUW0aGiqQtzgG6yBCTVepdgFn8w_UyX9LNdlya9rCNlKxjP38eaaqNl06xdICvZZeC8FHTRfV7s')"></div>
+<div class="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Bukti Transfer</div>
+</div>
+<div class="p-4 md:w-2/3 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold">Siti Aminah</h3>
+<p class="text-primary text-sm font-medium">Paket Enterprise - Rp 450.000</p>
+</div>
+<span class="bg-yellow-500/20 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full border border-yellow-500/30">PENDING</span>
+</div>
+<div class="flex items-center gap-2 mb-4 bg-red-500/10 border border-red-500/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-red-500 text-lg">warning</span>
+<p class="text-xs text-text-muted">OCR: <span class="text-red-400 font-semibold">Gagal - Gambar Buram</span></p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                Verifikasi
+                            </button>
+<button class="flex-1 bg-red-600/20 hover:bg-red-600/30 text-red-500 border border-red-600/30 font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">close</span>
+                                Tolak
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Validation Card 3 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden shadow-sm">
+<div class="md:flex">
+<div class="md:w-1/3 h-48 md:h-auto relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract paper receipt with green tone" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6G4lFdMovZnREsllFf5WAsMb9CNeg8reBno7-xdNKxbryISlpl6XkQLHbBqmRbEVbmf_PJEpH6AF-gvb_Xr8-zIZggXIf5whAVdmuwyixA8AvHdz-FPmVQ0CijLr1P5vvn83iKcfX1yIKcY44VGXjiglBKZgvSSNbHdbO-LBLY1AMhB-dnwF0I8gQ83KDERg3hOu-NbT7_ZM2wgOTMM4s11vYi6Uyhev4qjjYfYXaEayv81c9pHinfPvQj2Z7NhNGbSvYH5l9cMM')"></div>
+<div class="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Bukti Transfer</div>
+</div>
+<div class="p-4 md:w-2/3 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold">Rizky Pratama</h3>
+<p class="text-primary text-sm font-medium">Paket Basic - Rp 50.000</p>
+</div>
+<span class="bg-yellow-500/20 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full border border-yellow-500/30">PENDING</span>
+</div>
+<div class="flex items-center gap-2 mb-4 bg-primary/10 border border-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-xs text-text-muted">OCR: <span class="text-slate-100 font-semibold">Berhasil Terdeteksi (BCA)</span></p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                Verifikasi
+                            </button>
+<button class="flex-1 bg-red-600/20 hover:bg-red-600/30 text-red-500 border border-red-600/30 font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">close</span>
+                                Tolak
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-24"></div> <!-- Spacer for Bottom Nav -->
+</main>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-surface-dark border-t border-slate-200 dark:border-border-dark px-4 pb-6 pt-2 z-50">
+<div class="flex justify-between items-center max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 text-text-muted hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium leading-none">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">assignment_turned_in</span>
+<span class="text-[10px] font-medium leading-none">Validasi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-muted hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium leading-none">Laporan</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-muted hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium leading-none">Profil</span>
+</a>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .radio-dot {
+            --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(39,107,30)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1">Pembayaran</h2>
+<div class="size-12 flex items-center justify-end">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+</header>
+<main class="flex-1">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold px-4 pb-2 pt-4">Ringkasan Pesanan</h3>
+<div class="p-4">
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-primary/10 border border-primary/20 p-4 shadow-sm">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Exclusive Mangrove Night Tour</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal">1 x Paket Dewasa</p>
+<p class="text-primary font-bold mt-2">Rp 250.000</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Dark mysterious mangrove forest at night" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1Ooc21w725ggXx2hdQdkwN5e9E9Gz_Boxu2-4FNo9MLmx-AxX1vzbFEYh_dKNtEMwKCDH32kbIBdYNjZ2mXkICtH4zBJ7WHMLCqzdpKfpnLbhODDt_BiPsecwPVZPf72x8escD0JTLjEYNfuQoO_FkxWMFvyOsLEgIe9DffsekzEe3RDZ1n8hT4zIBrjN__3UVH6ql67hmN4TzFds19udQWksPRynpM0TMbNo6xU1grl4JrxDSO8_91uWP3a1R4cuvCbOHI_PT_M");'></div>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold px-4 pb-2 pt-4">Metode Pembayaran</h3>
+<div class="flex flex-col gap-3 p-4 radio-dot">
+<label class="flex items-center gap-4 rounded-xl border border-solid border-slate-200 dark:border-primary/30 p-4 flex-row-reverse cursor-pointer hover:bg-primary/5 transition-colors">
+<input checked="" class="h-5 w-5 border-2 border-primary/30 bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment" type="radio"/>
+<div class="flex grow items-center gap-3">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">E-Wallet (OVO, Dana, GoPay)</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Konfirmasi instan</p>
+</div>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-solid border-slate-200 dark:border-primary/30 p-4 flex-row-reverse cursor-pointer hover:bg-primary/5 transition-colors">
+<input class="h-5 w-5 border-2 border-primary/30 bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment" type="radio"/>
+<div class="flex grow items-center gap-3">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">Transfer Bank</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Verifikasi manual (max 10 menit)</p>
+</div>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-solid border-slate-200 dark:border-primary/30 p-4 flex-row-reverse cursor-pointer hover:bg-primary/5 transition-colors">
+<input class="h-5 w-5 border-2 border-primary/30 bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment" type="radio"/>
+<div class="flex grow items-center gap-3">
+<span class="material-symbols-outlined text-primary">qr_code_2</span>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">QRIS</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Scan &amp; bayar otomatis</p>
+</div>
+</div>
+</label>
+</div>
+<div class="p-4 mt-2">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Kode Diskon</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg px-4 py-2 text-sm focus:ring-primary focus:border-primary outline-none" placeholder="Masukkan kode" type="text"/>
+<button class="bg-primary/20 text-primary font-bold px-4 py-2 rounded-lg text-sm hover:bg-primary/30 transition-colors">Pakai</button>
+</div>
+</div>
+</div>
+<div class="p-4 mt-4 mb-24">
+<div class="bg-slate-50 dark:bg-primary/5 rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between text-sm">
+<span class="text-slate-600 dark:text-slate-400">Subtotal</span>
+<span class="text-slate-900 dark:text-slate-100">Rp 250.000</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-600 dark:text-slate-400">Biaya Layanan</span>
+<span class="text-slate-900 dark:text-slate-100">Rp 2.500</span>
+</div>
+<div class="h-px bg-slate-200 dark:bg-primary/20 my-1"></div>
+<div class="flex justify-between items-center">
+<span class="text-base font-bold text-slate-900 dark:text-slate-100">Total Pembayaran</span>
+<span class="text-xl font-bold text-primary">Rp 252.500</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 mt-6 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">lock</span>
+<p class="text-xs">Pembayaran Terenkripsi &amp; Aman</p>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-primary/20">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span>Bayar Sekarang</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pembayaran QRIS - Virtual Visit Mangrove Waropen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden border-x border-primary/10 shadow-2xl">
+<!-- Top Navigation -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/10 rounded-full transition-colors" data-icon="ArrowLeft">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Pembayaran QRIS</h2>
+</div>
+<!-- Header / Context -->
+<div class="px-6 pt-6 pb-2 text-center">
+<div class="inline-flex items-center justify-center p-2 bg-primary/20 text-primary rounded-full mb-4">
+<span class="material-symbols-outlined text-sm mr-2">park</span>
+<span class="text-xs font-semibold tracking-wide uppercase">Virtual Visit Mangrove Waropen</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-bold leading-tight">Scan &amp; Pay</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-2 px-4 leading-relaxed">Pindai kode QR di bawah ini menggunakan aplikasi perbankan atau dompet digital Anda</p>
+</div>
+<!-- QR Code Display -->
+<div class="flex flex-col items-center justify-center p-6 mt-4">
+<div class="relative p-6 bg-white rounded-xl shadow-[0_0_40px_rgba(39,107,30,0.15)] group">
+<div class="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
+<div class="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
+<div class="absolute -bottom-2 -left-2 w-8 h-8 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
+<div class="absolute -bottom-2 -right-2 w-8 h-8 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
+<div class="w-64 h-64 bg-slate-100 flex items-center justify-center overflow-hidden rounded-lg">
+<img alt="QRIS Payment Code" class="w-full h-full object-contain p-2" data-alt="Digital QRIS code for payment transaction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf1nv--2Hws3HKJSur2NF-gsbKMiqwryZxBa2mCS50lekKj8x59DczrMfwKke3v2vaIysA44jLvLSdoec7l87ImNo4Btulxcxtn0hb60BKUwTGEM75A2Uf_6Z-eVMl0Kr9ksQtLDAH1cqf9fCv2xPmnLHAnkQpMCDBFpPq06JWk9yeGGDjcskGOxvTdnU21NkG9MvlpLQlmk_uc01FC1iQFrUWqZ4kInjthp7F0VHiq57odSkPG3hSl5lO3_ViJq4Cp7H4y6I8TMg"/>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-3">
+<img class="h-6" data-alt="Official QRIS payment logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXiQTyWjXa18O_Rvg96NVIKIf69QMoN0vUQfpqjVE7VPriQBXsMm12gqwCN7tYy7Pu_v2dFqA0knaqQTocDqfbmQFZF50whsST1RoIrFtzvERKd24NbTW6q11VdM9bMRNpV2ghnQwWkS4llkI28dZ7HaJhCxUz_E2EmurN56609mFZnk1RrRJ9p1n0ikvGSzBTu2VCZ1ZLCV5XrsR_aqz_Rwz-a9sWkzNcPSEa_Xj12-E9SfBsvVk64NVKIf0vjpstT2W1pQ7beNU"/>
+<span class="h-4 w-px bg-slate-300 dark:bg-slate-700"></span>
+<p class="text-xs font-medium text-slate-500 tracking-widest uppercase">GPN Network</p>
+</div>
+</div>
+<!-- Payment Details -->
+<div class="flex flex-col gap-4 p-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-primary/10 border border-primary/20">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium leading-normal">Total Pembayaran</p>
+<div class="flex items-baseline gap-1">
+<span class="text-primary font-bold text-lg">Rp</span>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-extrabold leading-tight">75.000</p>
+</div>
+</div>
+</div>
+<!-- Instructions & Timer -->
+<div class="mt-auto px-6 pb-12">
+<div class="flex flex-col items-center justify-center space-y-4">
+<div class="flex items-center gap-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-sm font-bold tracking-tight">Sisa Waktu: 14:59</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold leading-normal tracking-widest uppercase text-center">Batas Waktu Pembayaran</p>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-200 dark:border-primary/10">
+<h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm mb-4">Langkah Pembayaran:</h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold">1</span>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-normal">Buka aplikasi m-banking atau e-wallet (GoPay, OVO, Dana, dll).</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold">2</span>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-normal">Pilih menu 'Scan' atau 'Bayar' dan arahkan kamera ke kode QR di atas.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold">3</span>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-normal">Periksa nominal pembayaran dan selesaikan transaksi.</p>
+</li>
+</ul>
+</div>
+<button class="w-full mt-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span>Cek Status Pembayaran</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="h-4 bg-background-light dark:bg-background-dark"></div>
+</div>
+</body></html>

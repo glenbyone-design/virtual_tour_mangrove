@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QRIS Upload System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/20 sticky top-0 z-10">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">QRIS Payment</h2>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Order Summary Card -->
+<div class="p-4">
+<div class="flex items-center justify-between gap-4 rounded-xl bg-primary/10 dark:bg-primary/20 p-4 border border-primary/20">
+<div class="flex flex-col gap-1 flex-1">
+<span class="text-xs uppercase tracking-wider text-primary font-bold">Order Summary</span>
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Exclusive Mangrove Night Tour</p>
+<p class="text-primary text-lg font-bold">Rp 250.000</p>
+</div>
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-lg shrink-0 border border-primary/30" data-alt="Night view of a mangrove forest with reflections" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1RqR7FQ2clyrPQ6u_NgH_L0yWnZBQHut0a91K5JxfguX7EMCOj6voZe6AjuK5V0ogjGP1jWZcksU5BAyrDxB8ZNPBLDg7iPZtPBRzISrMZZlnLpCulDyPeoyf27eQOhlVpuNZJLYw9Ja6xSnovY1aIm599pPtdrHyC-oJKUBin3QdTesjpY2ycCmaE3xoIABblWOO9U-lpBB1BFkzyVpDCFazN0iRsezY-TMHzthEZi3k7nR-yzhmmaTdi1aKE2m7qKAufkVEhRk");'></div>
+</div>
+</div>
+<!-- QRIS Section -->
+<div class="px-4 flex flex-col items-center">
+<div class="w-full max-w-[280px] aspect-square bg-white p-4 rounded-xl shadow-lg shadow-black/20 flex items-center justify-center relative overflow-hidden group">
+<img alt="QRIS Code" class="w-full h-full object-contain" data-alt="Standard QRIS code for digital payment transactions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlEe_aro_kJv7UADbBH_6cJfkmynK0ECaAqMlp8_OomD09pgGetPj0RzyUYdlpetvAqtBCwqCfGpI5X2ufBe0aDFp-MpAPyHMWNwkVPS5qHVsctCpWgaB4Q4lCFbMUSR6nk21o-cLJhaYJ09tqwAcwiQNo6Z6rOnggcgL7vjpfPUJiqw5BcXW2umDc8gwx_aIKSYjgKib6eW05BydklpoI8JrLtk4HbluDXYNFrqCWzsiym9F2TWqle9ZO4km-bAp5rqDg-wDQn2w"/>
+<div class="absolute bottom-0 left-0 right-0 bg-primary py-1 flex justify-center">
+<p class="text-[10px] text-white font-bold tracking-widest uppercase">QRIS GPN</p>
+</div>
+</div>
+<p class="mt-4 text-primary text-sm font-bold tracking-tight px-4 text-center">Scan QR Code to Pay</p>
+<p class="mt-1 text-slate-500 dark:text-slate-400 text-xs text-center px-8">Silakan scan kode QR di atas menggunakan aplikasi pembayaran digital pilihan Anda.</p>
+</div>
+<!-- Instructions -->
+<div class="p-4 mt-2">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-4 border border-dashed border-primary/30">
+<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">info</span>
+                        Instruksi Pembayaran
+                    </h4>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
+<li class="flex gap-2">
+<span class="font-bold text-primary">1.</span>
+<span>Simpan gambar QRIS atau scan langsung dari layar.</span>
+</li>
+<li class="flex gap-2">
+<span class="font-bold text-primary">2.</span>
+<span>Lakukan pembayaran sesuai nominal yang tertera.</span>
+</li>
+<li class="flex gap-2">
+<span class="font-bold text-primary">3.</span>
+<span>Unggah bukti transfer melalui tombol di bawah.</span>
+</li>
+</ul>
+<p class="mt-3 text-[10px] italic text-primary/80">Sistem akan memproses verifikasi bukti bayar secara otomatis setelah diunggah.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="px-4 py-2 flex flex-col gap-3">
+<button class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl border-2 border-primary text-primary font-bold text-sm hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">download</span>
+                    Simpan Gambar QRIS
+                </button>
+<button class="flex items-center justify-center gap-2 w-full py-4 px-4 rounded-xl bg-primary text-white font-bold text-base shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">cloud_upload</span>
+                    Unggah Bukti Bayar
+                </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full flex gap-2 border-t border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium leading-normal">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill">receipt_long</span>
+<p class="text-[10px] font-medium leading-normal">Orders</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<p class="text-[10px] font-medium leading-normal">History</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium leading-normal">Profile</p>
+</a>
+</nav>
+</div>
+</body></html>

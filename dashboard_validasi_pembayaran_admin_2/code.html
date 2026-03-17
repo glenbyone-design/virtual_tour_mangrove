@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-x-hidden border-x border-primary/10">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 justify-between">
+<button class="text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Validasi Pembayaran User</h2>
+<div class="flex size-10 items-center justify-end">
+<button class="text-slate-100 flex items-center justify-center p-2 hover:bg-primary/20 rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-primary/20 px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-wide">Pending</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-400 pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-wide">Approved</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-400 pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-wide">Rejected</p>
+</a>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- List Item 1 -->
+<div class="p-4 border-b border-primary/10 bg-primary/5 mb-2">
+<div class="flex gap-4 items-start">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shadow-lg border border-primary/20" data-alt="Bukti transfer bank berwarna biru muda" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQ19l6dvOqQWmqW6PPNdZ6zPKAQT-9_wA8FBNpuzt8zQ0qllf-SJ_9UD5D4uZaY7fDnNpSwk2PLFBSJilVHXbUeoG35zGNoLh8Ke-oKIykdFcLiuFwvkLH2gf2OOrwq9UxQ7oKZD6sS52Y-7iIl2yLWq4c9lcFjzEZxiAfaUNMLwcktsrJakiv18J1nukH6AG1mWmGDa_39O7FFR4LFMVFqh3YbBLQtN6S4iERHy0HVv2fVxB736ZliRIJ0oa_BqcRBPMcjSVMiIc");'>
+</div>
+<div class="absolute -top-1 -right-1">
+<span class="flex h-3 w-3 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]"></span>
+</div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 text-base font-semibold leading-tight">Ahmad Fauzi</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-yellow-500/20 text-yellow-500 border border-yellow-500/30">Pending</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Paket: <span class="text-primary font-medium">Peneliti</span></p>
+<p class="text-slate-500 text-[11px] mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            24 Oct 2023 • 14:20
+                        </p>
+</div>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-slate-100 text-sm font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                        Approve
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-red-900/30 border border-red-900/50 text-red-200 text-sm font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">cancel</span>
+                        Reject
+                    </button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="p-4 border-b border-primary/10 bg-primary/5 mb-2">
+<div class="flex gap-4 items-start">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shadow-lg border border-primary/20" data-alt="Screenshot struk pembayaran digital m-banking" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-KGsKXYbpiBRpLQOrmNHjOjRZ1ciQhmxd-ZnLexEiLL81buyRk4zMw8EEcVczeLR1RbNwJuOTov9EMHehX9dVbm99cUZr2M5fVhTTbk7IX0QIOIP1v9koFRvxhqjmfaKR2XtArf1agiEBSfN7_ZS-gycqu6gE5Zuthka9m53YIRVQvI3N0GUL9RZVS8PW01BrJU6QSblQpZja07kJw60vLb2buuKCUZiB980Jud0F7cec6RK3tynxL9eah1325gynfjglRxTIqyQ");'>
+</div>
+<div class="absolute -top-1 -right-1">
+<span class="flex h-3 w-3 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]"></span>
+</div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 text-base font-semibold leading-tight">Siti Aminah</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-yellow-500/20 text-yellow-500 border border-yellow-500/30">Pending</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Paket: <span class="text-primary font-medium">Mahasiswa</span></p>
+<p class="text-slate-500 text-[11px] mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            25 Oct 2023 • 09:15
+                        </p>
+</div>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-slate-100 text-sm font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                        Approve
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-red-900/30 border border-red-900/50 text-red-200 text-sm font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">cancel</span>
+                        Reject
+                    </button>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="p-4 border-b border-primary/10 bg-primary/5 mb-2">
+<div class="flex gap-4 items-start">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shadow-lg border border-primary/20" data-alt="Lembaran kertas struk ATM putih" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBod0juAdDi1_O2-UljRa782nyuyJBk0QgkHSoT9oRgfFbJfHv3N_pOEcRTKKOCNdE2zviSBXACfUxHwzb5Q1iZU60rZHd9pGY0JQmhCNZIoLp9SJwze0kIspSNC6vrgyiUU5j3GEUCNp_Uf1XgUUh5dMJbJJKre22WRJs2KnmzRuqYY0FQ0kVFPKg8Yjkml4ca2Y1uxHYaw7LpXrCT-wyOuTPuanwUJ39dbSU1aiJ60CSPROGrZvxy5qxXCGWiLAKPsrNlyUJGI20");'>
+</div>
+<div class="absolute -top-1 -right-1">
+<span class="flex h-3 w-3 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]"></span>
+</div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 text-base font-semibold leading-tight">Budi Santoso</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-yellow-500/20 text-yellow-500 border border-yellow-500/30">Pending</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Paket: <span class="text-primary font-medium">Lembaga</span></p>
+<p class="text-slate-500 text-[11px] mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            25 Oct 2023 • 11:45
+                        </p>
+</div>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-slate-100 text-sm font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                        Approve
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-red-900/30 border border-red-900/50 text-red-200 text-sm font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">cancel</span>
+                        Reject
+                    </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-background-dark/95 backdrop-blur-md border-t border-primary/20 px-4 pb-4 pt-2 shadow-2xl z-20">
+<div class="flex gap-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<p class="text-[10px] font-medium tracking-tight">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined material-symbols-fill">verified_user</span>
+</div>
+<p class="text-[10px] font-bold tracking-tight">Validation</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">group</span>
+</div>
+<p class="text-[10px] font-medium tracking-tight">Users</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<p class="text-[10px] font-medium tracking-tight">Settings</p>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

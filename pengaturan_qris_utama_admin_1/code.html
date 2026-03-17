@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Kelola Aset QRIS</h1>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-4 space-y-6 pb-24">
+<!-- Active QRIS Preview Section -->
+<section class="space-y-3">
+<h2 class="text-sm font-semibold uppercase tracking-wider text-primary">QRIS Aktif Saat Ini</h2>
+<div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-xl overflow-hidden shadow-sm">
+<div class="aspect-square w-full max-w-[280px] mx-auto p-4 bg-white mt-4 rounded-lg flex items-center justify-center">
+<img alt="QR Code current version" class="w-full h-full object-contain" data-alt="Digital QRIS barcode for merchant payments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM0HZVXcXUf5b4SvxryTwtHwHa6xkOnDRXm4i8-KibPulIrOk1NIcHJbe3cmGlJctgBPxfU-BCbup2rsXlyd_y7HxQcmjhNFI3YHw5N6XOBY2IrogDEX4qXegxUmdnxQc5zf45Puw7G8m79aoSXtBIM9pH3fems6uR_ZqRyV9d4Lb2qlA1B2zDeh52vAC6_uBaJ94oiOBZvMLYuhFdBAfJDgo97iFiYnu9EMwTe_hnys-PjYPcy8eDLV_3YattdPPkzsoWaCqIsXE"/>
+</div>
+<div class="p-4 flex flex-col gap-1 text-center">
+<p class="text-lg font-bold">Konservasi Waropen</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Terakhir diunggah: 12 Okt 2023</p>
+<div class="mt-3">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary/20 text-primary font-medium hover:bg-primary/30 transition-colors text-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                            Unduh QRIS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="space-y-4">
+<h2 class="text-sm font-semibold uppercase tracking-wider text-primary">Unggah QRIS Baru</h2>
+<div class="space-y-4">
+<!-- Merchant Name Input -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nama Merchant</label>
+<input class="w-full px-4 py-3 rounded-lg bg-white dark:bg-slate-800 border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Masukkan nama merchant..." type="text" value="Konservasi Waropen"/>
+</div>
+<!-- Upload Area -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">File QRIS (.jpg, .png)</label>
+<div class="border-2 border-dashed border-primary/30 rounded-xl p-8 flex flex-col items-center justify-center gap-3 bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer group">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="text-sm font-medium">Klik atau seret file ke sini</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Maksimal ukuran file 5MB</p>
+</div>
+<input accept="image/jpeg, image/png" class="hidden" type="file"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined">save</span>
+                Simpan Perubahan
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-primary/20 px-6 py-3 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Beranda</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">qr_code_2</span>
+<span class="text-[10px] font-medium">Aset</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-medium">Riwayat</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Profil</span>
+</a>
+</nav>
+</body></html>

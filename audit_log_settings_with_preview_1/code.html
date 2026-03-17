@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Audit Log Settings - Mangrove Conservation</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-primary/10">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 px-4">Audit Log Settings</h2>
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">more_vert</span>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Next Scheduled Report Preview Card -->
+<section class="px-4 pt-6">
+<div class="bg-primary/10 border border-primary/20 rounded-xl p-4 flex items-center gap-4">
+<div class="bg-primary text-white p-3 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-wider text-primary font-bold">Next Scheduled Report</p>
+<p class="text-slate-900 dark:text-slate-100 font-semibold">Monday, Oct 27, 2025 at 08:00 AM</p>
+</div>
+</div>
+</section>
+<section class="px-4 pt-8">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight mb-4">Report Configuration</h2>
+<!-- Toggle Component -->
+<div class="flex items-center gap-4 bg-primary/5 rounded-xl px-4 min-h-16 justify-between mb-6">
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium leading-normal">Automatic Weekly Log Reports</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Summarized audit activities delivered to inbox</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Multi-select Roles -->
+<div class="mb-6">
+<label class="text-slate-600 dark:text-slate-400 text-sm font-medium mb-2 block">Send to Roles</label>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full bg-primary text-white text-xs font-medium">
+                        Super Admin <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full bg-primary text-white text-xs font-medium">
+                        Content Editor <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full bg-primary text-white text-xs font-medium">
+                        Viewer <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<button class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full border border-primary/30 text-primary text-xs font-medium">
+<span class="material-symbols-outlined text-sm">add</span> Add Role
+                    </button>
+</div>
+</div>
+<!-- Recipient Email Chip Input -->
+<div class="mb-6">
+<label class="text-slate-600 dark:text-slate-400 text-sm font-medium mb-2 block">Recipient Email Addresses</label>
+<div class="flex flex-wrap gap-2 p-3 rounded-lg border border-primary/20 bg-primary/5 min-h-[48px]">
+<span class="inline-flex items-center gap-1 py-1 px-2 rounded bg-slate-200 dark:bg-slate-800 text-xs">
+                        security@mangrove.org <span class="material-symbols-outlined text-xs cursor-pointer">close</span>
+</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm p-0 flex-1 min-w-[120px]" placeholder="Add email..." type="text"/>
+</div>
+</div>
+<!-- Selectors Grid -->
+<div class="grid grid-cols-3 gap-3 mb-8">
+<div>
+<label class="text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-1 block">Frequency</label>
+<select class="w-full bg-primary/5 border border-primary/20 rounded-lg text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none">
+<option>Weekly</option>
+<option>Daily</option>
+<option>Monthly</option>
+</select>
+</div>
+<div>
+<label class="text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-1 block">Day</label>
+<select class="w-full bg-primary/5 border border-primary/20 rounded-lg text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none">
+<option>Monday</option>
+<option>Friday</option>
+<option>Sunday</option>
+</select>
+</div>
+<div>
+<label class="text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-1 block">Time</label>
+<select class="w-full bg-primary/5 border border-primary/20 rounded-lg text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none">
+<option>08:00 AM</option>
+<option>12:00 PM</option>
+<option>06:00 PM</option>
+</select>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3">
+<button class="w-full py-3 px-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+                    Save Changes
+                </button>
+<button class="w-full py-3 px-4 border border-primary text-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">send</span>
+                    Send Test Report
+                </button>
+</div>
+</section>
+<!-- Quick Insights Section -->
+<section class="px-4 mt-10">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Quick Insights</h3>
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-primary/5 p-4 rounded-xl border border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold mb-1">Total Logs</p>
+<p class="text-xl font-bold text-slate-900 dark:text-slate-100">12.4k</p>
+<div class="text-[10px] text-primary mt-1 flex items-center">
+<span class="material-symbols-outlined text-xs">trending_up</span> +12%
+                    </div>
+</div>
+<div class="bg-primary/5 p-4 rounded-xl border border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold mb-1">Failed</p>
+<p class="text-xl font-bold text-slate-900 dark:text-slate-100">42</p>
+<div class="text-[10px] text-red-500 mt-1 flex items-center">
+<span class="material-symbols-outlined text-xs">error</span> High
+                    </div>
+</div>
+<div class="bg-primary/5 p-4 rounded-xl border border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold mb-1">Alerts</p>
+<p class="text-xl font-bold text-slate-900 dark:text-slate-100">03</p>
+<div class="text-[10px] text-amber-500 mt-1 flex items-center">
+<span class="material-symbols-outlined text-xs">warning</span> Active
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full border-t border-primary/20 bg-background-light dark:bg-background-dark/95 backdrop-blur-md px-4 pb-4 pt-2 flex justify-between z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-[10px] font-medium">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-[10px] font-medium">Logs</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+<p class="text-[10px] font-medium">Settings</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium">Profile</p>
+</a>
+</nav>
+</body></html>

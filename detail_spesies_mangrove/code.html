@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Species Detail - Mangrove Encyclopedia</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Species Detail</h2>
+</header>
+<main class="flex-1">
+<div class="@container">
+<div class="@[480px]:px-4 @[480px]:py-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-primary/20 @[480px]:rounded-xl min-h-[400px] shadow-2xl relative" data-alt="Close up of Red Mangrove prop roots in clear water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDvXn8i0CIOmGeSL4V_MWrWDrv5_fnLO6JmaTrJ66IGcBC6iOps8LdhEXBZDDca-G07jOcnNNJCiO0wCqInn6qJX3088K5fpSj5J0pAMUFJYEIDwoXw1ceFgf_G9V5rmo0sNq_qpVtXx0C0iTvyyvYSEbSXmW9FH8gceIUr0POBdA7GiQj_jv6Cn6ltPcpXvtq_hZRY1cUu0qlD0iHXdf_b6wqYPXsn0Ds70J1hRlDAl1VpLn3yOQ-6LDSf95VUg45RehEXx5kkfM");'>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+<section class="px-4 pt-6 pb-2">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-bold leading-tight tracking-tight">Red Mangrove</h1>
+<h2 class="text-primary text-xl font-medium italic leading-tight mt-1">Rhizophora mangle</h2>
+</div>
+<button class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary/20">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex gap-2 mt-4">
+<span class="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full uppercase tracking-wider">Saltwater</span>
+<span class="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full uppercase tracking-wider">Coastal</span>
+<span class="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full uppercase tracking-wider">Prop Roots</span>
+</div>
+</section>
+<section class="px-4 py-6 space-y-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold border-l-4 border-primary pl-3">Scientific Description</h3>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base">
+                    The Red Mangrove is easily distinguished from other mangrove species by its specialized aerial prop roots which extend from the trunk and lower branches, providing stability in soft, anaerobic soils. The leaves are opposite, elliptical, and leathery, with a dark green upper surface and a paler underside. It is highly adapted to saline environments, actively excluding salt at the root level.
+                </p>
+</section>
+<section class="px-4 py-6 bg-primary/5 dark:bg-primary/10 my-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">eco</span>
+                    Environmental Benefits
+                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex gap-3 p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/5">
+<span class="material-symbols-outlined text-primary mt-1">shield</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Coastal Defense</p>
+<p class="text-xs text-slate-600 dark:text-slate-400">Dense root systems dissipate wave energy and protect shorelines from erosion and storm surges.</p>
+</div>
+</div>
+<div class="flex gap-3 p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/5">
+<span class="material-symbols-outlined text-primary mt-1">co2</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Carbon Sequestration</p>
+<p class="text-xs text-slate-600 dark:text-slate-400">Stores significantly more carbon per acre than tropical rainforests, helping mitigate climate change.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-6 pb-24">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-4">Associated Fauna</h3>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex-none w-40">
+<div class="aspect-square rounded-xl bg-primary/10 overflow-hidden mb-2">
+<img alt="Scarlet Ibis" class="w-full h-full object-cover" data-alt="Bright red bird perched in green foliage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH68vLf-RUTDcJ2VOgCTgw5mB-N5w3KrR9S_q3Bq1lhzlx75Z2agEaoiTkwNbsG25iyO3RkafiYL-9c6JjkrJ92xmgMN7XfZ_3luVcBTwC74jrS3rEFlmLWhf8ktysmSstcN1ts-lVYd-Px9AO5RxxqTecqcuuv4DwcCw5-AyT-ElgTDHcUG5n6W-bChBsnEeAz8d_ImKkn1HlTG_AtNzaiWNC84uZIcybIbFLVJFJe3sN3FYN133aVpJl1xZxSqNTTQHle0LbMYE"/>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Scarlet Ibis</p>
+<p class="text-xs text-primary">Aves</p>
+</div>
+<div class="flex-none w-40">
+<div class="aspect-square rounded-xl bg-primary/10 overflow-hidden mb-2">
+<img alt="Mangrove Crab" class="w-full h-full object-cover" data-alt="Crab climbing on mangrove roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_tL83LVjNn1zGqUuEqR9zFSSTo9Ms6pxx6xHWyor9hLF-xZ8jbnwv297duANLmFCsTAYoYV0vYCjulXLhYJDe9QN3NQz8wHPMWbKqTHiyfIqcVn2aYVWYaeNxDHqDNZ1J3C0pD9KkMt2sj82RRAdWh9ImH0igRTEoUUhe0Zju_Gjfjx6UwQoIB0-UwHTXmDPwkWsTVxrzvcDxuZAnr1OrNPkJOCAeezEpQE7Nm11aQK-8SE1e_qsslpi5GzDnNzDYQ2VIF9H8Gw"/>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Mangrove Crab</p>
+<p class="text-xs text-primary">Crustacean</p>
+</div>
+<div class="flex-none w-40">
+<div class="aspect-square rounded-xl bg-primary/10 overflow-hidden mb-2">
+<img alt="Lemon Shark" class="w-full h-full object-cover" data-alt="Small shark swimming in shallow clear water near roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyxV90Z5_u2ZzQiSb8YrOH9dFZT6IJfC_xbxva0MDfRlkKNK5UCPctHrvUfPCWwLBsxB1te5t_hoNKGzsgyyGkoqn6MjLrhdueGWw14nNAoo1doqTdz36LypbPTtUl99U74e2bNTpKyT0Chzsvplj6Qwa-H_85pLcuwiYKV8SnFQE4_0TcUAsXl4lybNrc8QazSPswyePup6GEhTw55zW8bsnOggvlN04TJ_LqkRbZEj960xv8JU0mGBpE_pkuI_krkGuFNlUVhI"/>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Juvenile Lemon Shark</p>
+<p class="text-xs text-primary">Elasmobranch</p>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-20 flex border-t border-primary/20 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg px-4 pb-4 pt-2 shadow-lg">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">search</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Explore</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Encyclopedia</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Map</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">bookmarks</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Saved</p>
+</a>
+</nav>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

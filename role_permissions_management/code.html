@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Management - Permissions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Top Bar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark border-b border-primary/20 p-4 justify-between sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">User Management</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-lg bg-transparent text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-lg bg-transparent text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col w-full max-w-4xl mx-auto">
+<!-- Tabbed Navigation -->
+<nav class="flex border-b border-primary/20 px-4">
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 px-4 hover:text-primary transition-colors" href="#">
+<span class="text-sm font-bold tracking-wide">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-4 px-4" href="#">
+<span class="text-sm font-bold tracking-wide">Permissions</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 px-4 hover:text-primary transition-colors" href="#">
+<span class="text-sm font-bold tracking-wide">Audit Log</span>
+</a>
+</nav>
+<!-- Role Selector -->
+<section class="px-4 py-6">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Select Role to Edit</h2>
+<div class="flex h-12 w-full items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/5 p-1 border border-primary/20">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:text-white text-slate-500 dark:text-slate-400 text-sm font-semibold transition-all">
+<span>Super Admin</span>
+<input class="hidden" name="role-select" type="radio" value="Super Admin"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:text-white text-slate-500 dark:text-slate-400 text-sm font-semibold transition-all">
+<span>Content Editor</span>
+<input checked="" class="hidden" name="role-select" type="radio" value="Content Editor"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:text-white text-slate-500 dark:text-slate-400 text-sm font-semibold transition-all">
+<span>Viewer</span>
+<input class="hidden" name="role-select" type="radio" value="Viewer"/>
+</label>
+</div>
+</section>
+<!-- Permissions List -->
+<section class="px-4 flex-1">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-xl">Content Management</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Define what this role can do within the encyclopedia and maps.</p>
+</div>
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold">
+                    12 Active
+                </div>
+</div>
+<div class="space-y-3">
+<!-- Permission Row 1 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Upload 360° Content</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Allow uploading panoramic immersive media</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Permission Row 2 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Edit Encyclopedia</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Modify species data and conservation status</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Permission Row 3 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">wrong_location</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Delete Locations</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Remove mangrove sanctuary points from map</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Permission Row 4 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">manage_accounts</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Manage Users</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Invite, suspend, and edit other admin users</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Footer Action -->
+<footer class="p-4 mt-8">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+                Save Changes
+            </button>
+<p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-4 px-8 leading-relaxed">
+                Changes will take effect immediately for all users assigned to the <span class="text-primary font-bold">Content Editor</span> role.
+            </p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 w-full border-t border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 z-10">
+<div class="flex gap-2 max-w-4xl mx-auto">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-xs font-medium">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">potted_plant</span>
+<p class="text-xs font-medium">Flora</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<p class="text-xs font-medium">Maps</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<p class="text-xs font-medium">Settings</p>
+</a>
+</div>
+</nav>
+</body></html>

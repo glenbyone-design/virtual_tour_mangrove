@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/20 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Kelola QRIS</h2>
+<p class="text-xs text-primary font-medium uppercase tracking-wider">Virtual Visit Mangrove Waropen</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden md:flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+                    Bantuan
+                </button>
+</div>
+</div>
+<main class="max-w-4xl mx-auto w-full p-4 md:p-8 space-y-8">
+<!-- Current Active QRIS Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">qr_code_2</span>
+                        QRIS Aktif Saat Ini
+                    </h2>
+<span class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full uppercase tracking-widest">Aktif</span>
+</div>
+<div class="bg-white dark:bg-primary/5 border border-primary/10 rounded-xl overflow-hidden shadow-sm">
+<div class="flex flex-col md:flex-row">
+<div class="w-full md:w-1/3 p-6 flex justify-center bg-slate-100 dark:bg-white/5">
+<div class="relative group">
+<div class="w-48 h-48 bg-white p-2 rounded-lg shadow-md border border-primary/10">
+<img alt="QRIS Barcode Preview" class="w-full h-full object-contain" data-alt="Official QRIS code for Mangrove Waropen payments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIn0D3MGoFLfcRk7KJGeIT1sHuliC17UiYC3Oq0POLiPECjhgA9zOmS4ICJMQFOs4m7bPx6CMXg3RSqrRFUmOWeYPKtifsYhK8e_4Iwlr6Z7jX6eDrP_U4Thwv2TDxWQv76p7YYXKp1d7zD4jlv3venGRMopgJZAFPKh9AtqYqWmrX45MCgEvRmV2B5YBXMX1-FrFsCfgFaEgTiVgRwP9HF3IFZj1Lo4J-ClidEdq8kONbLce7oW0etE-DNa8l4rIMN9OCz11OWQ"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-lg transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">QRIS Mangrove Waropen</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Terakhir diperbarui: 24 Okt 2023</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-3 bg-primary/5 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Status Merchant</p>
+<p class="text-sm font-semibold text-primary">Terverifikasi</p>
+</div>
+<div class="p-3 bg-primary/5 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">ID Merchant</p>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">ID-12904482</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                                    Unduh Barcode
+                                </button>
+<button class="md:flex-none flex items-center justify-center p-2 text-slate-500 dark:text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Upload Section -->
+<section>
+<div class="mb-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cloud_upload</span>
+                        Unggah Barcode Baru
+                    </h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Perbarui kode QRIS untuk memproses pembayaran kunjungan virtual.</p>
+</div>
+<div class="flex flex-col bg-white dark:bg-primary/5 border-2 border-dashed border-primary/30 rounded-xl overflow-hidden">
+<div class="flex flex-col items-center gap-4 px-6 py-16 text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-4xl">add_photo_alternate</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">Pilih File Gambar</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Format JPG atau PNG (Maksimal 2MB)</p>
+</div>
+<label class="mt-4 flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:brightness-110 transition-all">
+<input accept="image/png, image/jpeg" class="hidden" type="file"/>
+                            Pilih File
+                        </label>
+</div>
+</div>
+</section>
+<!-- Additional Settings -->
+<section class="bg-white dark:bg-primary/5 border border-primary/10 rounded-xl p-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-4">Pengaturan Tambahan</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 hover:bg-primary/5 rounded-lg transition-colors">
+<div class="flex flex-col">
+<span class="text-sm font-bold">Notifikasi Pembayaran</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Kirim notifikasi ke email admin saat ada transaksi</span>
+</div>
+<div class="w-12 h-6 bg-primary/20 rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-primary/5 rounded-lg transition-colors border-t border-primary/5 pt-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold">ID Merchant Kustom</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Tampilkan ID toko pada struk digital</span>
+</div>
+<input class="bg-primary/5 border border-primary/20 rounded px-3 py-1 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="Waropen_Mangrove_01"/>
+</div>
+</div>
+</section>
+<!-- Action Footer -->
+<div class="pt-6 border-t border-primary/20 flex flex-col md:flex-row gap-4 items-center justify-between">
+<p class="text-xs text-slate-500 dark:text-slate-400 italic">
+                    Perubahan akan langsung diterapkan pada sistem pembayaran tiket pengunjung.
+                </p>
+<div class="flex gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none h-12 px-8 border border-slate-300 dark:border-primary/30 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-100 dark:hover:bg-primary/10 transition-all">
+                        Batalkan
+                    </button>
+<button class="flex-1 md:flex-none h-12 px-10 bg-primary text-white rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all">
+                        Simpan Perubahan
+                    </button>
+</div>
+</div>
+<div class="h-10"></div>
+</main>
+</div>
+</body></html>

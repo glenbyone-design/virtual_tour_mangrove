@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Header Section -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/20 sticky top-0 z-10 backdrop-blur-md">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div class="ml-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Pengaturan WhatsApp</h2>
+<p class="text-xs text-primary font-medium uppercase tracking-wider">Mangrove Waropen Admin</p>
+</div>
+</div>
+<div class="flex-1 pb-24">
+<!-- Service Status Section -->
+<div class="px-4 py-6">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_remote</span>
+                    Status Layanan
+                </h3>
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-4 flex items-center justify-between">
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold">Notifikasi WhatsApp Otomatis</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Kirim pembaruan transaksi langsung ke pelanggan</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-700 p-0.5 transition-colors has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md transition-transform transform translate-x-0 peer-checked:translate-x-5"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Connection Section -->
+<div class="px-4 py-6 border-t border-primary/10">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">api</span>
+                    Integrasi API
+                </h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Nomor WhatsApp Bisnis</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-white dark:bg-slate-800 border border-primary/20 rounded-lg px-4 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Contoh: +628..." type="text" value="+62 812 3456 7890"/>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">link</span>
+                                Hubungkan
+                            </button>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div class="text-xs">
+<p class="font-bold text-slate-900 dark:text-slate-100">Status: Terhubung</p>
+<p class="text-slate-600 dark:text-slate-400">Sesi API aktif hingga 12 Des 2023</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Template Section -->
+<div class="px-4 py-6 border-t border-primary/10">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">chat_bubble_outline</span>
+                    Template Pesan Konfirmasi
+                </h3>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] font-bold rounded uppercase cursor-pointer hover:bg-primary/30">[Nama]</span>
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] font-bold rounded uppercase cursor-pointer hover:bg-primary/30">[ID_Transaksi]</span>
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] font-bold rounded uppercase cursor-pointer hover:bg-primary/30">[Alasan]</span>
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] font-bold rounded uppercase cursor-pointer hover:bg-primary/30">[Tanggal]</span>
+</div>
+<textarea class="w-full bg-white dark:bg-slate-800 border border-primary/20 rounded-xl p-4 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Tulis template pesan Anda di sini..." rows="6">Halo [Nama],
+
+Pesanan Anda dengan ID [ID_Transaksi] telah berhasil diverifikasi oleh Admin Mangrove Waropen.
+
+Terima kasih telah berkontribusi dalam pelestarian hutan mangrove kami!
+
+Status: Berhasil
+Alasan: [Alasan]</textarea>
+<div class="flex justify-end gap-3">
+<button class="px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg">Reset</button>
+<button class="px-6 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">Simpan Template</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50">
+<div class="flex gap-2 border-t border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 max-w-full mx-auto">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Laporan</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">notifications</span>
+</div>
+<p class="text-[10px] font-bold leading-normal tracking-wide">Notifikasi</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Akun</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

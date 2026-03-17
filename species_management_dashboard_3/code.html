@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Encyclopedia CMS - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #276b1e44;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 justify-between max-w-5xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="text-primary dark:text-slate-100 flex size-10 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Encyclopedia CMS</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="size-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-5xl mx-auto p-4 space-y-8 pb-32">
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Species Management</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Manage your mangrove encyclopedia database</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2.5 rounded-xl flex items-center gap-2 font-medium transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                    Add New Species
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white dark:bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-start relative group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 shadow-inner bg-slate-200 dark:bg-slate-800" data-alt="Bakau Kurap Mangrove tree with aerial roots" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvRWOwQ-Rw8tZoRQAhbMmCf0VNgru03_lnqHrmmSVWNIFLqe9gF2gE_-yuDAKlG1Xdt0ZKAaBX9weAS8dYeEWF2qZOXiftFwWnAAhryXEUQUpJDWgxW6UoFsDrhN96VyoDSBfLu1kXROGz9zutilfNpkDtk0ViQDrByNa8AeUBqWDRZs2jpjFKuExRobuDGrmvGQR1JaI2B2agRnCUHt9sEXv5kiRmj9c1H7fnmx8_b7dj--MuyCwuOulhTloBCBt4LU1n2kgJFAU");'>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Published</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight truncate">Bakau Kurap</p>
+<p class="text-primary italic text-sm font-medium leading-normal mb-2">Rhizophora mucronata</p>
+<div class="flex gap-2 mt-auto">
+<button class="flex-1 bg-slate-100 dark:bg-primary/10 hover:bg-primary/20 text-slate-700 dark:text-slate-300 py-1.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">edit</span> Edit
+                            </button>
+<button class="flex-1 bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 py-1.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">delete</span> Delete
+                            </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-start relative group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 shadow-inner bg-slate-200 dark:bg-slate-800" data-alt="Api-api Putih foliage close up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKnGhp2g5lJi1yntD2w24cFmoDdmFyR9XMPwwimDZ40OhO3cEnEfg_JXRUClSLAe4tidUv9f5qYHDxF8T-y2IFub9oqDV1et1YOEreVahe-5Fl_MvA05ssQpNP-xIWYx6cTYzGAzBaMNZUkfSVbVmbBw_7pEqfhTsvG6QmPR7cOOlQNppUdRZuMKPCLT-XALOnlxB4EVN9p5XjUISKINv4RVmM5L-q_j2Yb1IR0BlSbTUtfsb33quUMXcS27BaUL652RR02EXd1zc");'>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Draft</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight truncate">Api-api Putih</p>
+<p class="text-primary italic text-sm font-medium leading-normal mb-2">Avicennia alba</p>
+<div class="flex gap-2 mt-auto">
+<button class="flex-1 bg-slate-100 dark:bg-primary/10 hover:bg-primary/20 text-slate-700 dark:text-slate-300 py-1.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">edit</span> Edit
+                            </button>
+<button class="flex-1 bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 py-1.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">delete</span> Delete
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-primary/10"/>
+<section class="bg-white dark:bg-primary/5 border border-primary/20 rounded-2xl overflow-hidden">
+<div class="bg-primary/10 p-6 border-b border-primary/10">
+<h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_box</span>
+                    Add New Species
+                </h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Contribute a new species to the mangrove encyclopedia</p>
+</div>
+<form class="p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Local Name</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/20 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-900 dark:text-slate-100 transition-all" placeholder="e.g., Bakau Minyak" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Latin Name</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/20 rounded-lg p-3 italic focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-900 dark:text-slate-100 transition-all" placeholder="e.g., Rhizophora apiculata" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Scientific Description</label>
+<textarea class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/20 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-900 dark:text-slate-100 transition-all" placeholder="Detailed scientific characteristics..." rows="4"></textarea>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Environmental Benefits</label>
+<textarea class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/20 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-900 dark:text-slate-100 transition-all" placeholder="How does this species support the ecosystem?" rows="3"></textarea>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Photo Upload</label>
+<div class="border-2 border-dashed border-primary/30 rounded-xl p-8 flex flex-col items-center justify-center bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer group">
+<div class="size-14 rounded-full bg-primary/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+</div>
+<p class="font-medium text-slate-900 dark:text-slate-100">Click to upload or drag and drop</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">SVG, PNG, JPG or GIF (max. 800x400px)</p>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">save</span>
+                        Save Species
+                    </button>
+<button class="px-8 border border-slate-200 dark:border-primary/30 text-slate-600 dark:text-slate-400 font-bold py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-primary/10 transition-all" type="button">
+                        Cancel
+                    </button>
+</div>
+</form>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/90 backdrop-blur-lg border-t border-primary/10 z-50">
+<div class="flex max-w-5xl mx-auto px-4 pb-6 pt-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined fill-[1]">menu_book</span>
+<div class="absolute -top-1 -right-1 size-2 bg-primary rounded-full"></div>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-wider">Encyclopedia</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Map</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Settings</p>
+</a>
+</div>
+</nav>
+</body></html>

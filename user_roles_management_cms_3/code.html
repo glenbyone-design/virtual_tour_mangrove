@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mangrove Waropen - User Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-primary/20">
+<div class="flex items-center p-4 justify-between max-w-5xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<button class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold leading-tight tracking-tight">User Management</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Admin Profile" data-alt="Close up of male professional profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZHnFic-jO0NhdN8nBTj6Oo2ogLe0ea7b6UydHvzLzMj5EwlfGSu25FJ1Swd5g-nhKovLW4QUUEXEOOan9OEviJE5QHewOp94gBTiD4R4gI0LMVw7vBdZwzZphSHtp_-5oHTxiK_Tg9Fvqk4K9ofR6f3Hdlpg4jZBiGXeH9Pb-kWrVw3FjdjQr7QGFnHpwZpTNjAMLfIUWFMIGR4tlPLkgyFqojWe--uOdPQrvHQDR9UmIemV5OOLgvIRO7LXIsTWuzRw1ioKzgQY"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 max-w-5xl mx-auto w-full pb-24">
+<!-- Search & Add Actions -->
+<div class="p-4 space-y-4">
+<div class="flex flex-col sm:flex-row gap-4">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary/60">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 bg-primary/5 border-primary/20 rounded-lg text-sm placeholder-primary/40 focus:ring-primary focus:border-primary dark:bg-primary/10" placeholder="Search by name or email" type="text"/>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined">person_add</span>
+<span>Add New User</span>
+</button>
+</div>
+</div>
+<!-- Role Overview / Permission Matrix -->
+<section class="px-4 py-2">
+<h2 class="text-sm font-semibold uppercase tracking-wider text-primary mb-3">System Roles &amp; Permissions</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="p-4 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">security</span>
+<h3 class="font-bold">Super Admin</h3>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Full system access, user management, and configuration control.</p>
+</div>
+<div class="p-4 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<h3 class="font-bold">Content Editor</h3>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Can upload 360 content and edit encyclopedia entries.</p>
+</div>
+<div class="p-4 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<h3 class="font-bold">Viewer</h3>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Read-only access to maps and educational data.</p>
+</div>
+</div>
+</section>
+<!-- User List Section -->
+<section class="px-4 py-6">
+<h2 class="text-lg font-bold mb-4">Current Users</h2>
+<div class="space-y-3">
+<!-- User Card 1 -->
+<div class="flex items-center justify-between p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/30 transition-all">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full overflow-hidden bg-primary/20">
+<img alt="User 1" data-alt="Smiling woman portrait avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUJ8cWK4sAnkhl9Lw34B45uyX4apHI5IbfrfIE6tm7yHET5sOf-4JPDEEHVefz4qJIMLW5FcpMO9Zrj2qh4ZX6ixujQGMX1VcDTIhdiTwevvEil5cM8kONmkJVswUeXsT7s4R4RVWKKIq9nZsW8yPqNXLMyo1azoeMnirEaYNcKxdQ6hzGwDobSwxP-7lADf4mHZEtJqevATur6pko4mfF7GWByrnA3eGDMVRftwLO8IU6ptJhNuLDTfn0Sz4PmSZh0owChnIgnXk"/>
+</div>
+<div>
+<p class="font-bold">Sarah Jenkins</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">s.jenkins@mangrove.org</p>
+<div class="flex gap-2 mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-primary text-white uppercase">Super Admin</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/20 text-emerald-500 uppercase">Active</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-500/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- User Card 2 -->
+<div class="flex items-center justify-between p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/30 transition-all">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full overflow-hidden bg-primary/20">
+<img alt="User 2" data-alt="Man with glasses portrait avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjPJpI-fL0-G0Ye8JTux6Ywc-BXG-3vpvc_DULZQaYIOqg2lLVy1PzjRzRldc4P7U0ygPF6dgfcuPtjf2GJYfvJVD_6CbJLHqvuGHTTaQRxA-ATCeDpO8cOVwWYLczoH5LTNg4_ht-f1MJXGxQvYYPOEaLW5rHcvqMdyeXZlqkyfMlqkXZd4lf3TPa_4qxMF1DzmDzUHVoGbX78OYA_tQEyZ6gOghNXDmJkXlfxmBKtUbF1b-opD5aGI22992IeOrJVNQCe4PH8Wg"/>
+</div>
+<div>
+<p class="font-bold">Markus Toba</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">markus.t@forest.gov</p>
+<div class="flex gap-2 mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-primary/30 text-primary uppercase">Content Editor</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/20 text-emerald-500 uppercase">Active</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-500/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- User Card 3 -->
+<div class="flex items-center justify-between p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/30 transition-all opacity-80">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full overflow-hidden bg-primary/20">
+<img alt="User 3" data-alt="Professional man headshot avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABtSyr0P3M96OL4GmxbnyFfH1l_LY6EWRVJmmO6ybBm5zSOCSi4Eo8LqWDa5zMR81xB44TVh76u83sJMI5WzBF5-lldELFZHBBWai2IfNvICa4QXdPDvpFsn9k4JmDHmp7jLtv01cnlQpm-qT1ZMjCSZpHZDGO7bW1b4W-O4YOLFHcX2i7fvt2BE7t0g53a_glRevtrFWNHF7-iAwAyuh6XoA5fnNLDadVwBn4ayPHxg2CUyhITYHs4si5SssN9RGC7xM4wHXY6L4"/>
+</div>
+<div>
+<p class="font-bold">Alex Rivera</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">arivera@visitor.com</p>
+<div class="flex gap-2 mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-500/30 text-slate-400 uppercase">Viewer</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-500/20 text-slate-500 uppercase">Inactive</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-500/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- User Card 4 -->
+<div class="flex items-center justify-between p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/30 transition-all">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full overflow-hidden bg-primary/20">
+<img alt="User 4" data-alt="Woman profile photo avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0tGQ4r5qVoVImtEr9IgE8Hh0j9dW5q69-U4SWiwjUZaIsdKDjEI2kecY2cpwevk5BRUIvbjZ5yTsuTT6aQubCwsmIC2NALdofJBX6D_H2RbVNEZ01zx2ehIysYlwWCmYliNV6cS7TlkPp6R8DbLi684x-OV2FkbLTBuAhskvNYHyK_L_dlz5h4HYH6LAt3VrWM-tcn4LDgtQt62PfWseiFXkgoTZSTiM0lcLxrDxMw1Hl9pVTv0kPzzY4GAkJsEcwHYBmC7-yOM"/>
+</div>
+<div>
+<p class="font-bold">Elena Vance</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">evance@mangrove.org</p>
+<div class="flex gap-2 mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-primary/30 text-primary uppercase">Content Editor</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/20 text-emerald-500 uppercase">Active</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-500/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-primary/20 z-50">
+<div class="flex items-center justify-around px-4 pb-6 pt-2 max-w-5xl mx-auto">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-slate-500 dark:text-slate-400 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<p class="text-[10px] font-medium text-slate-500 dark:text-slate-400">Dashboard</p>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-slate-500 dark:text-slate-400 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<p class="text-[10px] font-medium text-slate-500 dark:text-slate-400">Encyclopedia</p>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-slate-500 dark:text-slate-400 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">map</span>
+</div>
+<p class="text-[10px] font-medium text-slate-500 dark:text-slate-400">Map</p>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-primary bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</div>
+<p class="text-[10px] font-medium text-primary">Settings</p>
+</a>
+</div>
+</nav>
+</body></html>

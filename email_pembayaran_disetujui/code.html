@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#276b1e",
+                "background-light": "#f6f8f6",
+                "background-dark": "#151f13",
+              },
+              fontFamily: {
+                "display": ["Lexend", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="max-w-[600px] mx-auto min-h-screen flex flex-col">
+<!-- TopAppBar / Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-6 justify-between border-b border-primary/10">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined" style="font-size: 28px;">forest</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10 uppercase tracking-widest">Mangrove Waropen</h2>
+</header>
+<!-- Hero Section -->
+<main class="flex flex-col px-6 py-8">
+<div class="flex flex-col items-center gap-8">
+<!-- Success Icon & Visual -->
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative flex items-center justify-center size-24 bg-primary text-white rounded-full shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-size: 56px;">check_circle</span>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-video bg-cover rounded-xl w-full border-4 border-primary/20 shadow-2xl" data-alt="Lush green mangrove forest with water reflections" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSvy7pbXpAJp1wClXrfLFeOyrwQpDV2GDTD77AvB0yQY4lWzArpWRJMG8NslN3ZEpE0j0HHjP2K4SoF0ziXQ3OQq2P5mXqK8_WRTlkl_ZZeheb_qZbce-mSrXpmGbEb2WwvFkgDmvMy8N4VxVyxB1OhAx1mQis24gVv6LugsWFKmHa-LfLn1nXobpC_y7nzVeW7Pxp-wugbLCjZ7EtqlfScH4ac7kVjfrIsBFJAEE5AOxXaMnFzqOCviPJXcgM-4uuF0-nbIDGofU");'>
+</div>
+<div class="flex max-w-[480px] flex-col items-center gap-3">
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight text-center">Payment Approved</h1>
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed text-center">
+                        Welcome to the adventure, <span class="text-primary font-semibold">Explorer!</span> Your payment has been successfully processed and your virtual journey is ready to begin.
+                    </p>
+</div>
+<div class="w-full max-w-md bg-white/5 dark:bg-primary/5 border border-primary/10 rounded-xl p-6 backdrop-blur-sm">
+<h3 class="text-primary text-sm font-bold uppercase tracking-wider mb-4 text-center">Transaction Details</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-primary/10 pb-3">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Purchased Plan</p>
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Paket Penjelajah</p>
+</div>
+<div class="flex justify-between items-center border-b border-primary/10 pb-3">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Transaction ID</p>
+<p class="text-slate-900 dark:text-white text-sm font-mono uppercase">TRX-99482710</p>
+</div>
+<div class="flex justify-between items-center border-b border-primary/10 pb-3">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Payment Status</p>
+<span class="px-2 py-1 bg-primary/20 text-primary text-[10px] font-bold rounded uppercase">Verified</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<p class="text-slate-900 dark:text-white text-base font-bold">Total Amount Paid</p>
+<p class="text-primary text-xl font-bold">IDR 150.000</p>
+</div>
+</div>
+</div>
+<div class="w-full flex flex-col gap-4">
+<button class="w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary text-white text-lg font-bold shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors flex gap-2">
+<span class="material-symbols-outlined">explore</span>
+<span class="truncate">Start Exploring Now</span>
+</button>
+<p class="text-slate-500 dark:text-slate-500 text-xs text-center">
+                        If the button doesn't work, copy and paste the link below into your browser:<br/>
+<span class="text-primary/70 underline">https://virtualvisit.mangrovewaropen.id/start/TRX-99482710</span>
+</p>
+</div>
+</div>
+</main>
+<footer class="mt-auto p-8 bg-primary/5 border-t border-primary/10 flex flex-col items-center gap-4">
+<div class="flex gap-4">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">language</span>
+</div>
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">mail</span>
+</div>
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">share</span>
+</div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] text-center max-w-xs leading-relaxed">
+                © 2024 Mangrove Waropen. This is an automated receipt. Please do not reply to this email. For support, contact support@mangrovewaropen.id
+            </p>
+</footer>
+</div>
+</body></html>

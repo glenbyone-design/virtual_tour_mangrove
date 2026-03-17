@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard - Email Templates</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .placeholder-chip:hover {
+            background-color: rgba(39, 107, 30, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/20 justify-between sticky top-0 z-10 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Payment Success Template</h1>
+<p class="text-xs text-primary font-medium uppercase tracking-wider">Mangrove Waropen Virtual Visit</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all font-semibold text-sm">
+<span class="material-symbols-outlined text-lg mr-2">visibility</span>
+                    Preview
+                </button>
+</div>
+</header>
+<main class="flex-1 max-w-4xl mx-auto w-full p-4 md:p-6 space-y-6">
+<!-- Template Editor Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Template Configuration</h2>
+</div>
+<!-- Email Subject Input -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Email Subject</label>
+<div class="flex w-full items-stretch rounded-lg shadow-sm">
+<input class="form-input flex w-full min-w-0 flex-1 rounded-lg dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/5 h-12 px-4 text-base font-normal" type="text" value="Payment Successful! Welcome to [Package Name]"/>
+</div>
+</div>
+<!-- Email Body Textarea -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Email Body (HTML/Text)</label>
+<div class="relative">
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none rounded-lg dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/5 min-h-[320px] p-4 text-base font-normal leading-relaxed" placeholder="Type your email content here...">Hi [Customer Name],
+
+Thank you for your purchase! Your payment for [Package Name] has been successfully processed.
+
+Order Details:
+- Transaction ID: [Transaction ID]
+- Amount: [Amount]
+- Date: [Date]
+
+You can now start your virtual visit to the beautiful Mangroves of Waropen. Click the link below to begin your adventure.
+
+Happy Exploring!
+The Mangrove Waropen Team</textarea>
+</div>
+</div>
+</section>
+<!-- Available Placeholders Section -->
+<section class="bg-primary/5 dark:bg-primary/10 rounded-xl p-5 border border-primary/20">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">variables</span>
+<h3 class="text-base font-bold">Available Placeholders</h3>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Click to copy or drag these into the editor to personalize your email.</p>
+<div class="flex flex-wrap gap-2">
+<button class="placeholder-chip flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-background-dark border border-primary/20 text-xs font-medium text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">person</span>
+                        [Customer Name]
+                    </button>
+<button class="placeholder-chip flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-background-dark border border-primary/20 text-xs font-medium text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">confirmation_number</span>
+                        [Transaction ID]
+                    </button>
+<button class="placeholder-chip flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-background-dark border border-primary/20 text-xs font-medium text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">package_2</span>
+                        [Package Name]
+                    </button>
+<button class="placeholder-chip flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-background-dark border border-primary/20 text-xs font-medium text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">payments</span>
+                        [Amount]
+                    </button>
+<button class="placeholder-chip flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-background-dark border border-primary/20 text-xs font-medium text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                        [Date]
+                    </button>
+</div>
+</section>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-primary/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-12 rounded-lg bg-primary text-white font-bold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">save</span>
+                    Save Template
+                </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-12 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-base hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined">history</span>
+                    View Version History
+                </button>
+</div>
+<!-- Preview Card (Optional/Subtle) -->
+<div class="bg-white dark:bg-primary/5 rounded-xl border border-dashed border-primary/30 p-8 text-center">
+<div class="mb-4 text-primary/40">
+<span class="material-symbols-outlined text-5xl">mail_lock</span>
+</div>
+<p class="text-slate-500 text-sm italic">Automated emails are sent via Amazon SES using the verified sender "noreply@mangrovewaropen.id"</p>
+</div>
+</main>
+<!-- Bottom Navigation Spacer for Mobile -->
+<div class="h-20 sm:hidden"></div>
+</div>
+</body></html>

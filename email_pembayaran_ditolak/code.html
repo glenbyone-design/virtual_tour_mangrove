@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="max-w-2xl mx-auto my-8 overflow-hidden rounded-xl border border-primary/20 bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header / App Bar -->
+<div class="flex items-center bg-primary/10 p-6 justify-between border-b border-primary/20">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl">forest</span>
+</div>
+<h1 class="text-primary text-xl font-bold tracking-tight">Mangrove Waropen</h1>
+</div>
+<div class="text-slate-400 text-sm">Notifikasi Pembayaran</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col px-8 py-10">
+<div class="flex flex-col items-center gap-6">
+<!-- Status Illustration/Icon -->
+<div class="relative flex items-center justify-center w-24 h-24 rounded-full bg-red-500/10 border-4 border-red-500/20">
+<span class="material-symbols-outlined text-red-500 text-5xl">cancel</span>
+</div>
+<div class="flex max-w-lg flex-col items-center gap-3">
+<h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight text-center">Pembayaran Ditolak</h2>
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed text-center">
+                        Halo <span class="font-semibold text-primary">[Nama Pengguna]</span>, mohon maaf verifikasi pembayaran Anda tidak berhasil dilakukan. Silakan periksa kembali detail transaksi Anda di bawah ini.
+                    </p>
+</div>
+<div class="w-full flex justify-center pt-2">
+<a class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-wide shadow-lg hover:bg-primary/90 transition-colors" href="#">
+<span class="truncate">Coba Lagi Sekarang</span>
+</a>
+</div>
+</div>
+<!-- Transaction Details -->
+<div class="mt-12 bg-primary/5 rounded-xl p-6 border border-primary/10">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">receipt_long</span>
+                    Detail Transaksi
+                </h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center py-2 border-b border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">ID Transaksi</p>
+<p class="text-slate-900 dark:text-white text-sm font-semibold">[ID Transaksi]</p>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Tanggal</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium">24 Okt 2023</p>
+</div>
+<div class="flex justify-between items-center py-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Total Jumlah</p>
+<p class="text-primary text-lg font-bold text-right">Rp 150.000</p>
+</div>
+</div>
+</div>
+<!-- Common Reasons -->
+<div class="mt-8">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight mb-4">Alasan Umum Penolakan:</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 text-xl mt-0.5">error_outline</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-normal">Bukti pembayaran tidak terbaca atau buram.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 text-xl mt-0.5">error_outline</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-normal">Nominal transfer tidak sesuai dengan tagihan.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 text-xl mt-0.5">error_outline</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-normal">Sesi pembayaran telah berakhir (expired).</p>
+</li>
+</ul>
+</div>
+<!-- Support Section -->
+<div class="mt-12 pt-8 border-t border-primary/10 flex flex-col items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm text-center mb-4">
+                    Butuh bantuan atau merasa ada kesalahan?
+                </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
+<span class="material-symbols-outlined text-base">mail</span>
+                        support@waropen.go.id
+                    </div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
+<span class="material-symbols-outlined text-base">call</span>
+                        +62 812-3456-7890
+                    </div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="bg-primary/5 p-6 flex flex-col items-center gap-4">
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+</a>
+</div>
+<p class="text-slate-500 dark:text-slate-500 text-[10px] uppercase tracking-widest text-center">
+                © 2023 Mangrove Waropen. Seluruh Hak Cipta Dilindungi.
+            </p>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed inset-0 -z-10 h-full w-full bg-background-light dark:bg-background-dark">
+<div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#276b1e15_1px,transparent_1px),linear-gradient(to_bottom,#276b1e15_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+</div>
+</body></html>

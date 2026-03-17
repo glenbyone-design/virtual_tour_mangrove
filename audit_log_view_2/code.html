@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Log - Mangrove Waropen Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-primary/20">
+<div class="flex items-center p-4 gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Audit Log</h1>
+</div>
+<nav class="flex px-4 overflow-x-auto no-scrollbar">
+<a class="px-4 py-3 text-sm font-semibold text-slate-500 dark:text-slate-400 border-b-2 border-transparent hover:text-primary" href="#">Users</a>
+<a class="px-4 py-3 text-sm font-semibold text-slate-500 dark:text-slate-400 border-b-2 border-transparent hover:text-primary" href="#">Permissions</a>
+<a class="px-4 py-3 text-sm font-semibold text-primary border-b-2 border-primary" href="#">Audit Log</a>
+</nav>
+</header>
+<main class="flex-1 flex flex-col p-4 gap-4 max-w-4xl mx-auto w-full">
+<div class="flex flex-col gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-primary/5 dark:bg-primary/10 border-none focus:ring-2 focus:ring-primary text-sm" placeholder="Search activity logs..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-xs font-medium whitespace-nowrap border border-primary/10">
+<span>Date Range</span>
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-xs font-medium whitespace-nowrap border border-primary/10">
+<span>Action Type</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-xs font-medium whitespace-nowrap border border-primary/10">
+<span>User</span>
+<span class="material-symbols-outlined text-sm">person</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="p-4 rounded-xl bg-white dark:bg-primary/5 border border-primary/10 flex gap-4 items-start shadow-sm">
+<img class="size-10 rounded-full object-cover" data-alt="Profile portrait of Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGyE_J06liniqJ7X6WxqOJ8DLaornoDROVxHkyrnDNmcPx3lcosL5RIojJXES2cTsbaa6FSEMk3T45-izlko5ALxja8P-XKJ2JEIdKIu-I6XDT-8IsHQhmBFR76vm6AtNvcvL9Q3V2YCxUA3zI09v1Mbn0foj_Bqfno7-9ZjWcO0q5DJFiKvHsxNQm1NmRzRI16IFTv_7SMNc1HisCc_J2b1mzFFolE21GFY3bd4451LzU85oEwloqZNV6WZN287OtXIoo6C6NtR4"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-sm">Sarah Jenkins</p>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 border border-blue-500/20">Update</span>
+</div>
+<p class="text-sm mt-1 text-slate-600 dark:text-slate-300">Updated <span class="font-medium text-primary">360° Panorama: North Sector</span></p>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>2 hours ago • Oct 24, 2023 - 14:20</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-primary/5 border border-primary/10 flex gap-4 items-start shadow-sm">
+<img class="size-10 rounded-full object-cover" data-alt="Profile portrait of Michael Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB457UOmzbsmaNeSMw8TNGyLPJ_Yam--4PeuouKVPIqn-evydWmcf6T7eEGBVjrumYoRyRLhK2nLg81FnEqHC7yeIg8QjYe8uJcWCjCl5by_4uz3LnOJOhHueorf9Jas1pQKRhwZvpK1ngEikHYVyEFQYjnpJzeKUmYLKtMZBImBXxdpWSoYOEKIH67sib7nGPyHzdCLaW9Nx9EF2OjelMqiU-9VC_iAlYQ6FB0ClaKCd1OW90vTmX5X4RwIxsBwmklrPvFEcMylGQ"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-sm">Michael Chen</p>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Create</span>
+</div>
+<p class="text-sm mt-1 text-slate-600 dark:text-slate-300">Added New Species: <span class="font-medium text-primary">Bakau Kurap (Rhizophora mucronata)</span></p>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>4 hours ago • Oct 24, 2023 - 12:15</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-primary/5 border border-primary/10 flex gap-4 items-start shadow-sm opacity-90">
+<img class="size-10 rounded-full object-cover" data-alt="Profile portrait of Alex Rodriguez" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqGMzrrbF8QOwT0x3LX8isyOWvsAl2s-jaKjyz1XWL42Zq4W9x7kamuoJGLz6VDBVPFvWnUSLftoyJqgbofYBJaZdJuu0o9nQYmglFOClpvjaqNa3wyb0GXHpzWxYg-tHUgF8N2dBjJX1Fexyq6YMQHu0Z-5uNOPZyxUfaHy_jkgOQcbcss4l8499eeMJPoU3IGirGXu44QgPrrd73kED_W7WFFtp5uHV_7kjsYiC-eTXXB42qNf_hxRmJ0IqYE3R654ihSAwvpJg"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-sm">Alex Rodriguez</p>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">Security</span>
+</div>
+<p class="text-sm mt-1 text-slate-600 dark:text-slate-300">Changed Permissions for <span class="font-medium text-primary">Content Editor Group</span></p>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Yesterday • Oct 23, 2023 - 16:45</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-primary/5 border border-primary/10 flex gap-4 items-start shadow-sm opacity-80">
+<img class="size-10 rounded-full object-cover" data-alt="Profile portrait of Elena V." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbRBRwJbzb5pSjest94l7XSqonwCnQ14VJHDomXLfwNbuNyS4NhtFlhIxkyPRybFvOG35_C3eKZcpHt9eizazWp_75Et7gQSpqelDunyLiDwxKZI_sXr0clp_XacJx9s_I3Djgr28jZlPnEwMs0HlaNxWW_pTGzyHkuQFvkqCivVI0730imvbZSbr23S6MfStcNouEEZpd3RJLTwsg9fPex-5oZUzbUnY6-RoHsjTkoAHQs7QYRdsZ_cxJTczJtfPxdiSuuKUv55I"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-sm">Elena Volkov</p>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/10 text-rose-500 border border-rose-500/20">Delete</span>
+</div>
+<p class="text-sm mt-1 text-slate-600 dark:text-slate-300">Removed outdated dataset: <span class="font-medium text-primary">Pre-2020 Soil Analysis</span></p>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>Yesterday • Oct 23, 2023 - 09:30</span>
+</div>
+</div>
+</div>
+</div>
+<button class="py-3 text-sm font-medium text-primary hover:bg-primary/5 rounded-lg transition-colors">
+            Load More Activity
+        </button>
+</main>
+<footer class="mt-auto bg-background-light dark:bg-background-dark border-t border-primary/20 safe-area-bottom">
+<div class="flex justify-around items-center px-4 py-2">
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-[10px] font-medium">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Members</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</footer>
+</body></html>

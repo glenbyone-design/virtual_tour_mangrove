@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex justify-center">
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-primary/10">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Pembayaran</h2>
+</div>
+<div class="flex flex-col flex-1 pb-10">
+<!-- QRIS Header -->
+<div class="px-4 py-6 text-center">
+<h4 class="text-primary font-bold text-sm tracking-wider uppercase mb-1">Scan QRIS untuk Bayar</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Berlaku untuk semua aplikasi e-wallet &amp; mobile banking</p>
+</div>
+<!-- QR Container -->
+<div class="flex w-full px-6">
+<div class="w-full bg-white p-6 rounded-xl shadow-lg flex flex-col items-center">
+<div class="w-full aspect-square bg-slate-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-contain" data-alt="QRIS code for digital payment processing" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrQMj4eVCJu6DRKsxDc4JsUiHIv_F6J0iXyvoh80J0VrbOQFjxy5KbaIHwLY7R3eq6uqVv9YWv3zWtp3GnlCA7j6v5tuMQX-nRjne49TFwGgPzqKemre8CBcVGUto3OqcYxtPpop5_MvtZXW2bzpLjQcZQ1WDnJsnXvi5YnTXqvaOXhoK5X55Njv7FTOR5MXM_z3rtddu4NwTi3XGjpz-hkkj9pkjDgj9Pq9q721SAq7n2Z6ax4YBVTqAv3FsVl_maH9lprYOjJuA");'></div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-xs font-bold text-slate-400">Merchant:</span>
+<span class="text-xs font-bold text-slate-800">GREEN FOREST STORE</span>
+</div>
+</div>
+</div>
+<!-- Action Button: Save QR -->
+<div class="flex px-4 py-6 justify-center">
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-primary/20 dark:bg-primary/30 text-primary hover:bg-primary/40 transition-all gap-2 text-sm font-bold border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="truncate">Simpan QR ke Galeri</span>
+</button>
+</div>
+<!-- Order Summary Section -->
+<div class="px-4 py-4">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-4 border border-primary/10">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+                        Ringkasan Pesanan
+                    </h3>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-slate-500 dark:text-slate-400">Total Harga (3 Item)</span>
+<span class="text-slate-700 dark:text-slate-200">Rp 145.000</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-slate-500 dark:text-slate-400">Biaya Layanan</span>
+<span class="text-slate-700 dark:text-slate-200">Rp 2.000</span>
+</div>
+<div class="pt-2 mt-2 border-t border-primary/10 flex justify-between items-center">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">Total Pembayaran</span>
+<span class="text-lg font-bold text-primary">Rp 147.000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Upload Section -->
+<div class="px-4 mt-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold mb-3 px-1">Unggah Bukti Bayar</h3>
+<div class="flex flex-col items-center justify-center border-2 border-dashed border-primary/30 dark:border-primary/20 bg-primary/5 rounded-xl p-8 group cursor-pointer hover:bg-primary/10 transition-colors">
+<div class="size-14 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[32px]">cloud_upload</span>
+</div>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-200">Upload Screenshot Transaksi</span>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Format JPG, PNG (Maks 5MB)</p>
+<input class="hidden" id="file-upload" type="file"/>
+<button class="mt-4 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg shadow-lg shadow-primary/20" onclick="document.getElementById('file-upload').click()">
+                        Pilih File
+                    </button>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-8 px-4 pb-12">
+<button class="w-full bg-primary text-white h-14 rounded-xl font-bold text-base shadow-xl shadow-primary/20 flex items-center justify-center gap-2">
+                    Konfirmasi Pembayaran
+                    <span class="material-symbols-outlined">check_circle</span>
+</button>
+<p class="text-center text-[10px] text-slate-400 mt-4 leading-relaxed px-6">
+                    Pembayaran Anda akan diverifikasi secara otomatis oleh sistem dalam 1-5 menit setelah bukti diunggah.
+                </p>
+</div>
+</div>
+</div>
+</body></html>

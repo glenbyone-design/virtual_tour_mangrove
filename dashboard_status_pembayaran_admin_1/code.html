@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard - Virtual Visit Mangrove Waropen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex flex-col min-h-screen">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-4 border-b border-primary/20 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">forest</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-tight tracking-tight">Mangrove Waropen</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Admin Virtual Visit</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-2 pl-2 border-l border-primary/20">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">AD</div>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Stats Overview -->
+<section class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-primary/10 border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Total Pendapatan Hari Ini</p>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<p class="text-2xl font-bold leading-tight">Rp 2.500.000</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-emerald-500 text-sm">trending_up</span>
+<p class="text-emerald-500 text-sm font-medium">+12.5% dari kemarin</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-primary/10 border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">User Aktif Premium</p>
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<p class="text-2xl font-bold leading-tight">124 User</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-rose-500 text-sm">trending_down</span>
+<p class="text-rose-500 text-sm font-medium">-2% dari minggu lalu</p>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="px-4 py-2">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Transaksi Terbaru</h2>
+<button class="flex items-center gap-1 text-primary text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export Data
+                    </button>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 text-white text-sm font-medium">
+                        Semua Status
+                    </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-primary/10 border border-primary/20 px-4 text-slate-700 dark:text-slate-200 text-sm font-medium">
+                        Lunas
+                    </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-primary/10 border border-primary/20 px-4 text-slate-700 dark:text-slate-200 text-sm font-medium">
+                        Pending
+                    </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-primary/10 border border-primary/20 px-4 text-slate-700 dark:text-slate-200 text-sm font-medium">
+                        Gagal
+                    </button>
+</div>
+</section>
+<!-- Transaction List -->
+<section class="p-4">
+<div class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5 dark:bg-primary/20 border-b border-primary/10">
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Pengguna</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Paket</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Tanggal</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Nominal</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Budi Santoso</span>
+<span class="text-xs text-slate-500">budisan@email.com</span>
+</div>
+</td>
+<td class="px-4 py-4 text-sm">Full Access 30 Hari</td>
+<td class="px-4 py-4 text-sm">12 Oct 2023</td>
+<td class="px-4 py-4 text-sm font-bold">Rp 150.000</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase">Lunas</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm leading-none">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Siti Aminah</span>
+<span class="text-xs text-slate-500">siti.a@email.com</span>
+</div>
+</td>
+<td class="px-4 py-4 text-sm">Premium Mangrove</td>
+<td class="px-4 py-4 text-sm">12 Oct 2023</td>
+<td class="px-4 py-4 text-sm font-bold">Rp 75.000</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 text-[10px] font-bold uppercase">Pending</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all" title="Detail">
+<span class="material-symbols-outlined text-sm leading-none">visibility</span>
+</button>
+<button class="p-2 rounded-lg bg-primary text-white hover:bg-primary/80 transition-all" title="Konfirmasi Manual">
+<span class="material-symbols-outlined text-sm leading-none">check_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Andi Wijaya</span>
+<span class="text-xs text-slate-500">andi_w@email.com</span>
+</div>
+</td>
+<td class="px-4 py-4 text-sm">Full Access 30 Hari</td>
+<td class="px-4 py-4 text-sm">11 Oct 2023</td>
+<td class="px-4 py-4 text-sm font-bold">Rp 150.000</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded-full bg-rose-100 dark:bg-rose-500/20 text-rose-700 dark:text-rose-400 text-[10px] font-bold uppercase">Gagal</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm leading-none">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Rina Marlina</span>
+<span class="text-xs text-slate-500">rina.m@email.com</span>
+</div>
+</td>
+<td class="px-4 py-4 text-sm">Daily Pass</td>
+<td class="px-4 py-4 text-sm">11 Oct 2023</td>
+<td class="px-4 py-4 text-sm font-bold">Rp 25.000</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase">Lunas</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm leading-none">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-primary/5 border-t border-primary/10 flex items-center justify-between">
+<p class="text-xs text-slate-500">Menampilkan 4 dari 45 transaksi</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-primary/20 text-xs font-medium hover:bg-primary/10">Prev</button>
+<button class="px-3 py-1 rounded border border-primary/20 bg-primary text-white text-xs font-medium">1</button>
+<button class="px-3 py-1 rounded border border-primary/20 text-xs font-medium hover:bg-primary/10">Next</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-primary/20 px-4 pb-6 pt-2 z-20">
+<div class="flex justify-around items-center max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Transaksi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">User</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Setting</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

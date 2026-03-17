@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#151f13",
+                        "whatsapp-green": "#25D366",
+                        "whatsapp-bubble": "#2d412a",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Lexend", sans-serif
+    }
+.whatsapp-bg {
+    background-color: #0b141a;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuADt0DjsnWsG-RlKTuk98_ghyPixuyqkWLuLg0ItF6iasm5p3jKdKcTkqe2DNSl0FaHal-tQbnsbnk20KmebxxQ_jjZVhaw54_fGlIjafeSqaRWaLKnoNKA5XOy6GcRcUwthlt9thxoymviAREWSNtIzl3rzVo94kPqOVGRAcGViK_hz5xur2dNN4wmBsaQXX6vGlAM3SQhQtytCorQCNpuyNWiYFvCAhJNJhILAMPMtqI245qfNg0iWf9VunF2SxOYHIaEdoRN1QU);
+    background-repeat: repeat
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen w-full flex-col bg-background-dark overflow-hidden max-w-md mx-auto shadow-2xl">
+<!-- TopAppBar -->
+<div class="flex items-center bg-[#1f2c34] p-4 py-3 justify-between shadow-md z-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-100 cursor-pointer">arrow_back</span>
+<div class="relative">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center overflow-hidden border border-primary/30">
+<img alt="Mangrove Waropen Profile Picture" class="w-full h-full object-cover" data-alt="Official logo of Mangrove Waropen conservation group" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsydbiV6DZFCnPXvEoFmN3iX9oCulbPmqasV785Lz5lvilBaXdAkaxJ6x6Pc5ZlxVswlGsezzF4vXRr4Ee6DX-ta_dWhXDBWdnS5To8p-CtnwJEbwpsan3bIzqPHYTo2JyDLTg77CYl9bM6StBgyqKXFJI0cfdjLByEhW_EaV2qaHkvZBkX4evu2DZQzKlamyjRTx13TqAsQgSwPGEJG1mmjkEYQ4Jeph9w-u1JF7dx7ErPNBxk_m3ncL3-3KDipMHdwwszHxbb7o"/>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<h2 class="text-slate-100 text-base font-bold leading-tight tracking-tight">Mangrove Waropen</h2>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1">verified</span>
+</div>
+<p class="text-primary/70 text-xs font-medium">Official Account</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-100 cursor-pointer">videocam</span>
+<span class="material-symbols-outlined text-slate-100 cursor-pointer">call</span>
+<span class="material-symbols-outlined text-slate-100 cursor-pointer">more_vert</span>
+</div>
+</div>
+<!-- Chat Area -->
+<div class="flex-1 whatsapp-bg overflow-y-auto p-4 flex flex-col gap-4">
+<!-- Date Header -->
+<div class="flex justify-center my-2">
+<span class="bg-[#182229] text-[#8696a0] text-[11px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">Hari Ini</span>
+</div>
+<!-- Warning Message Bubble -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-whatsapp-bubble rounded-tr-xl rounded-br-xl rounded-bl-xl p-3 relative shadow-sm">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-red-400 text-sm">warning</span>
+<span class="text-red-400 text-[11px] font-bold uppercase tracking-tight">Verifikasi Gagal</span>
+</div>
+<p class="text-slate-100 text-[14px] leading-relaxed">
+                        Halo, pembayaran Anda <span class="font-bold">tidak dapat kami proses</span>.
+                        <br/><br/>
+<span class="text-slate-300">ID Transaksi:</span> <span class="font-mono text-primary/80">MW-882910</span>
+<br/>
+<span class="text-slate-300">Alasan:</span> Gambar bukti transfer tidak terbaca/buram. 
+                        <br/><br/>
+                        Mohon unggah kembali bukti transfer yang jelas agar pesanan Anda dapat segera kami proses.
+                    </p>
+<div class="flex justify-end mt-1">
+<span class="text-[10px] text-slate-400">14:20</span>
+</div>
+</div>
+</div>
+<!-- Action Link Bubble -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-whatsapp-bubble rounded-tr-xl rounded-br-xl rounded-bl-xl p-0 overflow-hidden shadow-sm">
+<div class="p-3">
+<p class="text-slate-100 text-[14px] leading-relaxed">
+                            Klik tautan di bawah untuk mencoba lagi:
+                        </p>
+<a class="text-blue-400 text-[14px] underline block mt-1 break-all" href="#">
+                            https://mangrovewaropen.id/re-upload/MW-882910
+                        </a>
+</div>
+<!-- Link Preview Card -->
+<div class="bg-black/20 border-t border-white/5 p-3 flex gap-3 cursor-pointer hover:bg-black/30 transition-colors">
+<div class="flex-1 min-w-0">
+<p class="text-slate-100 text-sm font-bold truncate">Coba Lagi Sekarang</p>
+<p class="text-slate-400 text-xs line-clamp-2">Unggah ulang bukti pembayaran Anda secara instan melalui portal resmi Mangrove Waropen.</p>
+<p class="text-slate-500 text-[10px] mt-1 uppercase">MANGROVEWAROPEN.ID</p>
+</div>
+<div class="size-16 rounded-lg overflow-hidden shrink-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">upload_file</span>
+</div>
+</div>
+<div class="flex justify-end p-1 pr-3 bg-black/20">
+<span class="text-[10px] text-slate-400">14:20</span>
+</div>
+</div>
+</div>
+<!-- Help Message -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-whatsapp-bubble rounded-tr-xl rounded-br-xl rounded-bl-xl p-3 relative shadow-sm">
+<p class="text-slate-100 text-[14px] leading-relaxed">
+                        Butuh bantuan? Hubungi Customer Service kami di:
+                    </p>
+<div class="flex items-center gap-2 mt-2 bg-black/20 p-2 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary text-sm">support_agent</span>
+<span class="text-primary font-bold text-sm">0812-3456-7890</span>
+</div>
+<div class="flex justify-end mt-1">
+<span class="text-[10px] text-slate-400">14:21</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="bg-[#1f2c34] p-2 flex items-center gap-2">
+<div class="flex-1 bg-[#2a3942] rounded-full flex items-center px-3 py-1 gap-2">
+<span class="material-symbols-outlined text-[#8696a0] cursor-pointer">mood</span>
+<input class="bg-transparent border-none focus:ring-0 text-slate-100 flex-1 text-sm h-10 placeholder:text-[#8696a0]" placeholder="Ketik pesan" type="text"/>
+<span class="material-symbols-outlined text-[#8696a0] cursor-pointer rotate-45">attach_file</span>
+<span class="material-symbols-outlined text-[#8696a0] cursor-pointer">photo_camera</span>
+</div>
+<button class="size-11 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+<!-- Navbar Indicator (Mobile Style) -->
+<div class="bg-[#1f2c34] h-6 flex justify-center items-center">
+<div class="w-32 h-1 bg-slate-500/30 rounded-full"></div>
+</div>
+</div>
+</body></html>

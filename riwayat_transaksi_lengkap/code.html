@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Riwayat Transaksi - Mangrove Waropen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#276b1e",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0f160f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-dark/95 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 gap-4">
+<button class="p-2 hover:bg-primary/20 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-100">Riwayat Transaksi</h1>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary">search</span>
+<input class="w-full bg-primary/10 border border-primary/20 rounded-xl py-3 pl-11 pr-4 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Cari transaksi..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<nav class="flex px-4 border-b border-primary/10">
+<button class="flex-1 py-3 text-sm font-semibold border-b-2 border-primary text-primary">Semua</button>
+<button class="flex-1 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200">Berhasil</button>
+<button class="flex-1 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200">Pending</button>
+<button class="flex-1 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200">Gagal</button>
+</nav>
+</header>
+<!-- Transaction List -->
+<main class="flex-1 overflow-y-auto p-4 space-y-4 pb-24">
+<!-- Transaction Item 1 -->
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-center">
+<div class="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Mangrove forest aerial view landscape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoFU4caTFeRzTzYSkX59TRygCnbsMBzKL4onFPLbIiuAF3bNHTmT7bKMeXHlV9YxefhdWEcPB7idyFoouGILwfuIOVdJduovrh9fKCl2OpxQzoUGb8Cm95H039kMcm_IfQRRW82bbB-4UffcuBG8ebyjL_vugk9aXKJzXsj0S9U6UjSvaPuAZdCbCd8-mGet-Z-0vgZdH8cHG7zyZvaJmulqsCMiabSAeW4X7D5EjijQpKRDn9E6F4JtL8C0eLQbcQyNXtrZ37Mek')"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-100">Akses Penuh</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-green-500/20 text-green-400 border border-green-500/30">Berhasil</span>
+</div>
+<p class="text-xs text-slate-400 mb-2">12 Okt 2023, 14:30</p>
+<div class="flex justify-between items-center">
+<p class="text-sm font-bold text-slate-100">Rp 252.500</p>
+<button class="text-xs font-medium text-primary flex items-center gap-1">
+                        Detail <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Transaction Item 2 -->
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-center">
+<div class="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Dense mangrove roots and swamp" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlWRE5n9yxb_1wvkCFpWvUQ9QQ0OOwuED9Swpq5dQOZtJKI3kBeJhmZidJmct-ZwXwvsoMFHOcsPLwp8in5aqPascNeglNlExlNMJkKZpfWycfEeMzSLU5oEI2fIy693oiu-JnR_na1RHFX7zk4QdeK5GZDudY3wkryCeQp6rHkSMJwi3mZonqwWcQFzECl-ttzn4YwtUxg_Q4UUd-x7e8kwTUttTLMWTnN1v6UxguRfbzSd3d2TU7F15vB4bU4VEucy-RXdZ9LoA')"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-100">Akses Mingguan</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30">Pending</span>
+</div>
+<p class="text-xs text-slate-400 mb-2">10 Okt 2023, 09:15</p>
+<div class="flex justify-between items-center">
+<p class="text-sm font-bold text-slate-100">Rp 75.000</p>
+<button class="text-xs font-medium text-primary flex items-center gap-1">
+                        Bayar Sekarang <span class="material-symbols-outlined text-xs">payments</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Transaction Item 3 -->
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-center">
+<div class="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Green mangrove leaves close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZyosX7F3HT1aPMac9z_KH1JWGP96amOIiCU0JMRzvEZkAZrYJU1aSHoK1n8sa5r1GpNUNbEvTA5Tcpnr77fWnNDKFDioMmaDuFf5K02R1KRRiTJ27-H6JOPxJkbyLXWbKxq0KBKSJbC5YnNpHMRLFMXt1KiDVfCsJhzdZW4qb0cz2iRhs_TLURleycBJk3ZQFT-GPeWhmW2AWE7U1Yk2MNzM9AS6F_qdrTlNm96Xvz7Iauhb5Q5SJhOndO7tmE8h_y7gddoNAc-Y')"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-100">Akses Harian</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-500/20 text-red-400 border border-red-500/30">Gagal</span>
+</div>
+<p class="text-xs text-slate-400 mb-2">08 Okt 2023, 16:45</p>
+<div class="flex justify-between items-center">
+<p class="text-sm font-bold text-slate-100">Rp 15.000</p>
+<button class="text-xs font-medium text-slate-400 flex items-center gap-1">
+                        Ulangi <span class="material-symbols-outlined text-xs">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Transaction Item 4 -->
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-center">
+<div class="w-16 h-16 rounded-lg bg-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Sunlight through forest canopy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS3R1mO72Aa4A6fOALblyEptjlDvof0qvUqM14jYoQ-Aw1hF5JVmntihShi1qv6cNj6WEFBBTHQKDbDrzolyQnFjMA4_lYjbk0QYBq4HdmFwZljXxzIIBR4FrDAdvBbjxtqbyB8ncaIPkftBf-3u1lH7nC7aH_UuuOeFEaA878w3_9hFFTYnO4BLpf7zhUXmkPyZzqjNJKPT6ofC5SwBIEQ35a2Oz296sMg-akVUDP3VVUfD8MLy-_0Ji6mKye5Iwlhj6O5QM_qh8')"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-100">Akses Penuh</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-green-500/20 text-green-400 border border-green-500/30">Berhasil</span>
+</div>
+<p class="text-xs text-slate-400 mb-2">01 Okt 2023, 11:20</p>
+<div class="flex justify-between items-center">
+<p class="text-sm font-bold text-slate-100">Rp 252.500</p>
+<button class="text-xs font-medium text-primary flex items-center gap-1">
+                        Detail <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-dark/95 backdrop-blur-lg border-t border-primary/20 pb-safe">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center justify-center gap-0.5 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">Jelajah</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">bookmark</span>
+<span class="text-[10px] font-medium">Langganan</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</a>
+</div>
+</nav>
+</body></html>
