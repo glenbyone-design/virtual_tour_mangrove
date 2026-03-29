@@ -48,7 +48,7 @@
 <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 dark:border-primary/20">
 <div class="flex items-center p-4 justify-between max-w-2xl mx-auto w-full">
 <div class="flex items-center gap-3">
-<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+<div onclick="window.location.href='../index.html'" class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 cursor-pointer hover:bg-primary/20 transition-colors">
 <span class="material-symbols-outlined">arrow_back</span>
 </div>
 <div>
@@ -68,21 +68,21 @@
 <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-primary/60 group-focus-within:text-primary transition-colors">
 <span class="material-symbols-outlined">search</span>
 </div>
-<input class="w-full h-12 pl-12 pr-4 rounded-xl border-none bg-primary/5 dark:bg-primary/10 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 text-sm" placeholder="Cari nama lokal atau ilmiah..." value=""/>
+<input id="searchInput" class="w-full h-12 pl-12 pr-4 rounded-xl border-none bg-primary/5 dark:bg-primary/10 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 text-sm" placeholder="Cari nama lokal atau ilmiah..." />
 </label>
 <!-- Horizontal Categories -->
-<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-4 text-white text-sm font-medium">
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 pt-2" id="categoryFilters">
+<button data-filter="Semua" class="filter-btn flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-4 text-white text-sm font-medium transition-colors">
                     Semua
                 </button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20">
-                    Rhizophora <span class="material-symbols-outlined text-sm">expand_more</span>
+<button data-filter="Rhizophora" class="filter-btn flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors">
+                    Rhizophora
 </button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20">
-                    Avicennia <span class="material-symbols-outlined text-sm">expand_more</span>
+<button data-filter="Avicennia" class="filter-btn flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors">
+                    Avicennia
 </button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20">
-                    Sonneratia <span class="material-symbols-outlined text-sm">expand_more</span>
+<button data-filter="Sonneratia" class="filter-btn flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4 text-primary text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors">
+                    Sonneratia
 </button>
 </div>
 </div>
@@ -92,107 +92,121 @@
 <h2 class="text-xl font-bold tracking-tight">Katalog Spesies Waropen</h2>
 <span class="text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded">24 Spesies</span>
 </div>
-<!-- Species Cards -->
-<div class="grid grid-cols-1 gap-4">
-<!-- Card 1 -->
-<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex h-32">
-<div class="w-1/3 h-full overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Close up of lush green mangrove leaves and roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNLMtEhNhEAxOnXm-Yzgk_nTs1HuDgmxduq5PAw-YbaUmsZhJSKbQqxByvDN-hrWhBflpnxP1KC3x1AqlJjb2OQ3EZDTjH1C0xR3gHJzFp4E0ocmtkT_dKZ8FaHuXJE0V5XpeUfkJeB06fMG6Ww0863q6yq3wW2u9hLN0Tk-_Qm7378neGNnSBWNN1LdjhtyhFAVkvEPmG8w7i7u85H3gDwVy_ieGGoKg_nMvsl8feRXYOAn1evqhcN7FzYZF5oraZ28In99c5K8g"/>
-</div>
-<div class="flex-1 p-4 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start">
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Bakau Kurap</h3>
-<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
-</div>
-<p class="text-xs italic text-primary font-medium">Rhizophora mucronata</p>
-</div>
-<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Memiliki akar tunjang yang kuat dan buah berbentuk silindris panjang.</p>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex h-32">
-<div class="w-1/3 h-full overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Mangrove forest roots in clear coastal water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYtYBtD9yTQAEbX_4meUnxxeUBXtDJEXdwm7_0gKAHFkTcRKJL5wuHKNqctBAMMA9_oHDjNrw-YM9zsMSSu0k_ecoO8dt4KZtHGIqDL_S0sRT2_bjlQgOTkGitbEqqwdvNassL8euAKpGr-IgqSxdq05OCOdMkuvlZDND6z5zdDjMssiuYolqNQwYiE3rGQGUJ-suTTS-jz4dSfn41cFk9NrQHFxlFO0BkiKnChWbz-A75SDSpPZw0MsWho35Kd63277IlBmdPvik"/>
-</div>
-<div class="flex-1 p-4 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start">
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Api-api Putih</h3>
-<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
-</div>
-<p class="text-xs italic text-primary font-medium">Avicennia marina</p>
-</div>
-<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Dikenal dengan akar napas yang muncul ke permukaan tanah seperti pensil.</p>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex h-32">
-<div class="w-1/3 h-full overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Sonneratia alba mangrove tree with fruit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNIsmtA8iWmGqrIbypTyhv_T8EdvWUXZDHGE4xQsnwwX_-D2SK8egl2WSKNe21_DDH1WicD2mP2_ue1rMR3LMBQ3jdw1Klh9crbuvcDg4G81g1YCYdZw6oI46pFnE7i45Dc2Y67boJo7AKJpuFvnCBczlGO5rkDf0C4C_eCA07zUIv3CxdiT5d8zcvpDu1J0Oh6rOegUq_KaBghYeWnqHtB_E2tQH-mtUrl3D0pLY1lQK2kS_q6MSBoqczN9gs_WttlpQ2Y9e2sEM"/>
-</div>
-<div class="flex-1 p-4 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start">
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Pedada</h3>
-<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
-</div>
-<p class="text-xs italic text-primary font-medium">Sonneratia alba</p>
-</div>
-<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Memiliki buah berbentuk bulat seperti bola yang dapat dimakan.</p>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex h-32">
-<div class="w-1/3 h-full overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Dense mangrove foliage under bright sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1jm9kFI9PdfB3JsfuSoJlXsM8BooAdyLMnUvwk_lFwfecuM_t6fnWkpi1XGm3OwcNZFwbMqDPE9FpV4WUX6Qk1pmLSwY2GJZLarlyvXShzjmogssQ0sxNR9U9utEY01ugEWcAniZe1C5--95TRi_dSi-CTDx6BIWNNObpE3RkR2USY6a54c5f-d33vbnrD9S_u3_TTBWhC_cFzOM9j1crlXMsEBDL7nB5mGeoR6eICQJyMm-046dCFixY61SXqXRKNTxdSTJMnxM"/>
-</div>
-<div class="flex-1 p-4 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start">
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Tumu Putih</h3>
-<span class="material-symbols-outlined text-primary/40 text-sm">info</span>
-</div>
-<p class="text-xs italic text-primary font-medium">Bruguiera cylindrica</p>
-</div>
-<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Pohon ini sering ditemukan di zona mangrove bagian tengah.</p>
-</div>
-</div>
-</div>
+<!-- Species Cards Container Dinamis -->
+<div id="spesiesList" class="grid grid-cols-1 gap-4">
+    <div class="p-8 text-center text-slate-500 animate-pulse">Menghubungkan ke server untuk memuat Ensiklopedia...</div>
 </div>
 </div>
 </main>
 <!-- Bottom Navigation Bar -->
 <nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-primary/10 dark:border-primary/20 px-2 pb-6 pt-2 z-50">
 <div class="flex justify-around max-w-2xl mx-auto">
-<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 w-16" href="#">
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors w-16" href="../beranda_landing_1/code.html">
 <span class="material-symbols-outlined">home</span>
 <p class="text-[10px] font-medium">Beranda</p>
 </a>
-<a class="flex flex-col items-center justify-center gap-1 text-primary w-16" href="#">
+<a class="flex flex-col items-center justify-center gap-1 text-primary w-16" href="../ensiklopedia_spesies_1/code.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">menu_book</span>
 <p class="text-[10px] font-bold">Edukasi</p>
 </a>
-<div class="relative -top-4">
+<div class="relative -top-4 cursor-pointer hover:scale-105 transition-transform" onclick="window.location.href='../virtual_tour_360_1/code.html'">
 <div class="bg-primary rounded-full p-4 text-white shadow-lg shadow-primary/40">
 <span class="material-symbols-outlined text-2xl">map</span>
 </div>
 </div>
-<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 w-16" href="#">
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors w-16" href="../virtual_tour_360_1/code.html">
 <span class="material-symbols-outlined">explore</span>
 <p class="text-[10px] font-medium">Tur</p>
 </a>
-<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 w-16" href="#">
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors w-16" href="../index.html">
 <span class="material-symbols-outlined">person</span>
 <p class="text-[10px] font-medium">Profil</p>
 </a>
 </div>
 </nav>
+
+<script>
+let allSpesiesData = [];
+let currentFilter = "Semua";
+
+async function loadEnsiklopedia() {
+    try {
+        const response = await fetch('http://localhost:3000/api/spesies');
+        allSpesiesData = await response.json();
+        renderList(allSpesiesData);
+    } catch(err) {
+        document.getElementById('spesiesList').innerHTML = '<div class="text-red-500 text-center">Gagal menyambungkan ke Database. Pastikan server nyala.</div>';
+    }
+}
+
+function renderList(data) {
+    const badge = document.querySelector('h2 + span');
+    if (badge) badge.innerText = data.length + ' Spesies';
+    
+    const container = document.getElementById('spesiesList');
+    container.innerHTML = '';
+    
+    if (data.length === 0) {
+        container.innerHTML = '<div class="text-center text-slate-500 p-8">Tidak ditemukan spesies yang sesuai.</div>';
+        return;
+    }
+    
+    data.forEach(item => {
+        const cardHtml = `
+        <div onclick="window.location.href='../detail_spesies_mangrove/code.html?id=${item.id}'" class="bg-white dark:bg-slate-900/40 rounded-xl overflow-hidden border border-slate-200 dark:border-primary/10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+            <div class="flex h-32">
+                <div class="w-1/3 h-full overflow-hidden bg-primary/5 flex items-center justify-center">
+                    <img class="w-full h-full object-cover" src="${item.gambar}" onerror="this.src='https://placehold.co/400x400/276b1e/ffffff?text=Mangrove'" />
+                </div>
+                <div class="flex-1 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100">${item.nama_lokal}</h3>
+                            <span class="material-symbols-outlined text-primary/40 text-lg">arrow_forward</span>
+                        </div>
+                        <p class="text-xs italic text-primary font-medium">${item.nama_ilmiah}</p>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mt-2">${item.deskripsi}</p>
+                </div>
+            </div>
+        </div>`;
+        container.innerHTML += cardHtml;
+    });
+}
+
+function applyFilters() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    
+    const filteredData = allSpesiesData.filter(item => {
+        const matchSearch = item.nama_lokal.toLowerCase().includes(query) || item.nama_ilmiah.toLowerCase().includes(query) || item.deskripsi.toLowerCase().includes(query);
+        const matchCategory = currentFilter === "Semua" || item.nama_ilmiah.includes(currentFilter);
+        return matchSearch && matchCategory;
+    });
+    
+    renderList(filteredData);
+}
+
+// Event Listeners
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Update styling
+        document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.remove('bg-primary', 'text-white');
+            b.classList.add('bg-primary/10', 'text-primary');
+        });
+        const clicked = e.currentTarget;
+        clicked.classList.remove('bg-primary/10', 'text-primary');
+        clicked.classList.add('bg-primary', 'text-white');
+        
+        currentFilter = clicked.dataset.filter;
+        applyFilters();
+    });
+});
+
+// Mulai pengambilan data setelah seluruh HTML dimuat
+window.addEventListener('DOMContentLoaded', loadEnsiklopedia);
+</script>
+
 </body></html>

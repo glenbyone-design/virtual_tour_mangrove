@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Ekosistem Mangrove & Virtual Tour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Lexend', sans-serif; background-color: #f6f8f6; }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; box-shadow: 0 10px 15px -3px rgba(39, 107, 30, 0.2); border-color: #276b1e; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+<div class="max-w-6xl mx-auto p-6 lg:p-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-[#276b1e] mb-4">Navigasi Utama Aplikasi Mangrove</h1>
+        <p class="text-slate-500 text-lg">Semua desain antarmuka aplikasi Anda telah dikumpulkan di sini. Klik pada salah satu kartu untuk melihat halamannya.</p>
+        
+        <div class="mt-6 bg-yellow-100 border border-yellow-300 text-yellow-800 p-4 rounded-lg max-w-3xl mx-auto text-sm">
+            <strong>Pemberitahuan Sistem:</strong> Saat ini aplikasi berjalan dalam "Mode Desain (Prototype)". Komputer Anda belum memiliki <i>Node.js</i> terinstal untuk menjalankan backend sesungguhnya.
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Kategori 1: User / Umum -->
+        <a href="beranda_landing_1/code.html" class="card bg-white p-6 rounded-xl border border-gray-200 shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">🏠 Beranda (Home)</h3>
+            <p class="text-sm text-slate-500">Halaman utama website (/Landing Page) untuk pengunjung umum.</p>
+        </a>
+
+        <a href="virtual_tour_360_1/code.html" class="card bg-white p-6 rounded-xl border border-gray-200 shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">🌍 Virtual Tour 360°</h3>
+            <p class="text-sm text-slate-500">Tampilan ruang pengalaman Virtual Tour Mangrove bagi pengguna.</p>
+        </a>
+
+        <a href="ensiklopedia_spesies_1/code.html" class="card bg-white p-6 rounded-xl border border-gray-200 shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">🌿 Ensiklopedia Spesies</h3>
+            <p class="text-sm text-slate-500">Daftar buku Ensiklopedia interaktif tetang flora & fauna Mangrove.</p>
+        </a>
+
+        <a href="chat_dengan_kaka_mangrove/code.html" class="card bg-white p-6 rounded-xl border border-gray-200 shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">💬 Chat Asisten (Kaka)</h3>
+            <p class="text-sm text-slate-500">Tampilan percakapan interaktif dengan asisten pintar Mangrove.</p>
+        </a>
+
+        <a href="pembayaran_qris_user/code.html" class="card bg-white p-6 rounded-xl border border-gray-200 shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">💳 Pembayaran QRIS User</h3>
+            <p class="text-sm text-slate-500">Halaman Checkout / transaksi pembayaran pengguna untuk akses fitur premium.</p>
+        </a>
+
+        <!-- Kategori 2: Administrator -->
+        <a href="login_admin_mangrove_waropen/code.html" class="card bg-white p-6 rounded-xl border border-[#276b1e] bg-green-50 shadow-sm block">
+            <h3 class="text-xl font-bold text-[#276b1e] mb-2">🔐 Login Admin</h3>
+            <p class="text-sm text-slate-500">Halaman awal bagi pengurus CMS Mangrove untuk masuk ke Dashboard.</p>
+        </a>
+
+        <a href="dashboard_statistik_admin_1/code.html" class="card bg-white p-6 rounded-xl border border-[#276b1e] shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">📊 Dashboard Admin (Kinerja)</h3>
+            <p class="text-sm text-slate-500">Menampilkan statistik kunjungan, pendapatan, dan data utama aplikasi.</p>
+        </a>
+
+        <a href="admin_dashboard_upload_360_content_1/code.html" class="card bg-white p-6 rounded-xl border border-[#276b1e] shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">📸 Upload Konten 360°</h3>
+            <p class="text-sm text-slate-500">Halaman admin untuk menambah lokasi dan gambar Equirectangular baru.</p>
+        </a>
+
+        <a href="dashboard_validasi_pembayaran_admin_1/code.html" class="card bg-white p-6 rounded-xl border border-[#276b1e] shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">✅ Validasi Pembayaran</h3>
+            <p class="text-sm text-slate-500">Admin menyetujui atau menolak transaksi manual dari user.</p>
+        </a>
+
+        <a href="kelola_destinasi_admin/code.html" class="card bg-white p-6 rounded-xl border border-[#276b1e] shadow-sm block">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">🛠️ Kelola Destinasi Beranda</h3>
+            <p class="text-sm text-slate-500">Ubah gambar, judul, dan deskripsi destinasi pilihan yang tampil di beranda.</p>
+        </a>
+
+    </div>
+
+    <div class="mt-12 text-center text-sm text-slate-400">
+        <p>File ini dihasilkan otomatis oleh AI untuk membantu Anda beralih antar halaman dengan mudah.</p>
+    </div>
+</div>
+
+</body>
+</html>

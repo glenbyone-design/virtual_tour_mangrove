@@ -73,79 +73,48 @@
 </div>
 </div>
 <!-- Chat Content Area -->
-<div class="flex-1 overflow-y-auto p-4 space-y-6">
-<!-- AI Message -->
-<div class="flex items-start gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0 border-2 border-primary" data-alt="Portrait of a friendly local guide with a smile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGipLgZDwXc2a8xwU9XUmZurpDs3IAsQsr2G2BGQPnlO9vH_ramEOBMd4roDyBSmx9w0mKMLlGNLUMa4fWQgfoAaDacH3s6QfETSnvvjYbO3sRL6OHzHFMU69gUxoR-ipT06xtJwwPiaIM32RZsh4nqoCqcPgIJXP_AeModNuq87Ex_28t_cYZyk847nJmK0e4VqFZogIqIqAicLQYcuBP7z2c3ApnsIbj3f-uiWtCz8f9ETjfvESRYMrQCkX3_ynGqYUcnm9F9h0')"></div>
-<div class="flex flex-1 flex-col gap-1 items-start">
-<div class="flex items-center gap-2">
-<p class="text-primary text-[13px] font-semibold leading-normal">Kaka Mangrove</p>
-<button class="text-primary/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">volume_up</span>
-</button>
-</div>
-<div class="text-sm md:text-base font-normal leading-relaxed flex flex-col gap-2 max-w-[90%] rounded-xl rounded-tl-none px-4 py-3 bg-primary/10 border border-primary/20 text-slate-100">
-<p>Pace, Mace! Welcome to our beautiful mangrove forest. I am Kaka Mangrove, your guide from Waropen.</p>
-<p>What would you like to know about our home today?</p>
-</div>
-</div>
-</div>
-<!-- User Message -->
-<div class="flex items-start gap-3 justify-end">
-<div class="flex flex-1 flex-col gap-1 items-end">
-<p class="text-slate-400 text-[13px] font-normal leading-normal text-right">You</p>
-<p class="text-sm md:text-base font-normal leading-relaxed flex max-w-[85%] rounded-xl rounded-tr-none px-4 py-3 bg-primary text-slate-100 shadow-lg">
-                            Why are these mangrove roots so important?
-                        </p>
-</div>
-<div class="bg-primary/20 flex items-center justify-center aspect-square rounded-full w-10 shrink-0 border border-primary/30">
-<span class="material-symbols-outlined text-primary">person</span>
-</div>
-</div>
-<!-- AI Response with Local Wisdom -->
-<div class="flex items-start gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0 border-2 border-primary" data-alt="Portrait of a friendly local guide smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAocEuExGar7kUXAgjrVQzbPYSc7WKU3hW3PG7Hku7hO2JO0rWaYph3lCBaK6hXztnIUoPhmwiTv2t0p9ykoMV3vOCcUbNjhcmR1giHuUdXIlqiHELXSXtOz0HDGLpWEDH-Y3z6sqoboGWRRwqD8vAwa4ISYEghAvELAFoZhiUgqau-NFqJ1QGsvElagMF6HQAXjZvsitsXUO7xjVNhDage0avM94mzrGA_v74iwO3VfyCKja_hAerD2HGxRzUYhaPqvjMw7vg0t2k')"></div>
-<div class="flex flex-1 flex-col gap-1 items-start">
-<div class="flex items-center gap-2">
-<p class="text-primary text-[13px] font-semibold leading-normal">Kaka Mangrove</p>
-<button class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-sm">volume_up</span>
-<span class="text-[10px] font-bold uppercase tracking-wider">Listen</span>
-</button>
-</div>
-<div class="text-sm md:text-base font-normal leading-relaxed flex flex-col gap-3 max-w-[90%] rounded-xl rounded-tl-none px-4 py-3 bg-primary/10 border border-primary/20 text-slate-100">
-<p>Ah, in Waropen wisdom, these 'stilt' roots are like the hands of our ancestors. They hold the earth tight so the sea doesn't steal it away.</p>
-<p>They provide a safe nursery for the fish, just as a mother protects her children. Without them, the coastline would vanish like a dream.</p>
-<div class="mt-2 p-3 rounded-lg bg-background-dark/50 border-l-4 border-primary italic text-sm text-slate-300">
-                                "If the mangroves are healthy, the sea is generous."
-                            </div>
-</div>
-</div>
-</div>
+<div id="chatBox" class="flex-1 overflow-y-auto p-4 space-y-6">
+    <!-- Pesan Awal (Greeting) -->
+    <div class="flex items-start gap-3">
+        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0 border-2 border-primary" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGipLgZDwXc2a8xwU9XUmZurpDs3IAsQsr2G2BGQPnlO9vH_ramEOBMd4roDyBSmx9w0mKMLlGNLUMa4fWQgfoAaDacH3s6QfETSnvvjYbO3sRL6OHzHFMU69gUxoR-ipT06xtJwwPiaIM32RZsh4nqoCqcPgIJXP_AeModNuq87Ex_28t_cYZyk847nJmK0e4VqFZogIqIqAicLQYcuBP7z2c3ApnsIbj3f-uiWtCz8f9ETjfvESRYMrQCkX3_ynGqYUcnm9F9h0')"></div>
+        <div class="flex flex-1 flex-col gap-1 items-start">
+            <div class="flex items-center gap-2">
+                <p class="text-primary text-[13px] font-semibold leading-normal">Kaka Mangrove</p>
+                <button class="text-primary/60 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-sm">volume_up</span>
+                </button>
+            </div>
+            <div class="text-sm md:text-base font-normal leading-relaxed flex flex-col gap-2 max-w-[90%] rounded-xl rounded-tl-none px-4 py-3 bg-primary/10 border border-primary/20 text-slate-100">
+                <p>Pace, Mace! Selamat datang di hutan mangrove kami. Saya Kaka Mangrove, pemandu Anda dari Waropen.</p>
+                <p>Apa yang ingin Anda ketahui tentang spesies dan rumah kami hari ini?</p>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Footer / Input Area -->
 <div class="p-4 bg-background-dark/80 border-t border-primary/20">
-<div class="flex items-center gap-2 mb-4 overflow-x-auto pb-2 scrollbar-hide">
-<button class="whitespace-nowrap rounded-full px-4 py-1.5 bg-primary/10 border border-primary/30 text-xs font-medium text-slate-300 hover:bg-primary hover:text-white transition-colors">
-                        Tell me about local fish
-                    </button>
-<button class="whitespace-nowrap rounded-full px-4 py-1.5 bg-primary/10 border border-primary/30 text-xs font-medium text-slate-300 hover:bg-primary hover:text-white transition-colors">
-                        Best time to visit?
-                    </button>
-<button class="whitespace-nowrap rounded-full px-4 py-1.5 bg-primary/10 border border-primary/30 text-xs font-medium text-slate-300 hover:bg-primary hover:text-white transition-colors">
-                        Waropen history
-                    </button>
-</div>
-<div class="flex items-center gap-2">
-<div class="relative flex-1">
-<input class="w-full bg-primary/5 border border-primary/30 rounded-full py-3 px-5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="Ask Kaka Mangrove..." type="text"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:text-primary/80">
-<span class="material-symbols-outlined">mic</span>
-</button>
-</div>
-<button class="flex size-12 items-center justify-center rounded-full bg-primary text-slate-100 hover:shadow-[0_0_15px_rgba(39,107,30,0.5)] transition-all">
-<span class="material-symbols-outlined">send</span>
-</button>
+    <div id="suggestionChips" class="flex items-center gap-2 mb-4 overflow-x-auto pb-2 scrollbar-hide">
+        <button onclick="sendStaticChat('Ceritakan tentang ikan lokal')" class="whitespace-nowrap rounded-full px-4 py-1.5 bg-primary/10 border border-primary/30 text-xs font-medium text-slate-300 hover:bg-primary hover:text-white transition-colors">
+            Ceritakan tentang ikan lokal
+        </button>
+        <button onclick="sendStaticChat('Waktu terbaik untuk berkunjung?')" class="whitespace-nowrap rounded-full px-4 py-1.5 bg-primary/10 border border-primary/30 text-xs font-medium text-slate-300 hover:bg-primary hover:text-white transition-colors">
+            Waktu terbaik untuk berkunjung?
+        </button>
+        <button onclick="sendStaticChat('Bagaimana akar bakau bekerja?')" class="whitespace-nowrap rounded-full px-4 py-1.5 bg-primary/10 border border-primary/30 text-xs font-medium text-slate-300 hover:bg-primary hover:text-white transition-colors">
+            Bagaimana akar bakau bekerja?
+        </button>
+    </div>
+    <form id="chatForm" class="flex items-center gap-2">
+        <div class="relative flex-1">
+            <input id="chatInput" autocomplete="off" class="w-full bg-primary/5 border border-primary/30 rounded-full py-3 px-5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="Tanya Kaka Mangrove..." type="text"/>
+            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:text-primary/80">
+                <span class="material-symbols-outlined">mic</span>
+            </button>
+        </div>
+        <button type="submit" class="flex size-12 items-center justify-center rounded-full bg-primary text-slate-100 hover:shadow-[0_0_15px_rgba(39,107,30,0.5)] transition-all">
+            <span class="material-symbols-outlined">send</span>
+        </button>
+    </form>
 </div>
 </div>
 </div>
@@ -180,15 +149,70 @@
 </div>
 </div>
 </div>
-<!-- Background Location Label -->
-<div class="absolute top-8 left-8 z-10 hidden md:block">
-<div class="glass-panel px-4 py-2 rounded-lg border border-primary/20">
-<p class="text-xs font-bold text-primary uppercase tracking-widest">Current Location</p>
-<h1 class="text-xl font-bold text-slate-100">Waropen Mangrove Coast</h1>
-<div class="flex items-center gap-2 mt-1 text-slate-400 text-xs">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span>Papua, Indonesia</span>
+    </div>
 </div>
-</div>
-</div>
+<script>
+    const chatBox = document.getElementById('chatBox');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+
+    function sendStaticChat(text) {
+        chatInput.value = text;
+        chatForm.dispatchEvent(new Event('submit'));
+    }
+
+    chatForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const text = chatInput.value.trim();
+        if(!text) return;
+
+        // 1. Tambah bubble chat User
+        chatBox.innerHTML += `
+            <div class="flex items-start gap-3 justify-end mt-4">
+                <div class="flex flex-1 flex-col gap-1 items-end">
+                    <p class="text-slate-400 text-[13px] font-normal leading-normal text-right">Anda</p>
+                    <p class="text-sm md:text-base font-normal leading-relaxed flex max-w-[85%] rounded-xl rounded-tr-none px-4 py-3 bg-primary text-slate-100 shadow-lg">
+                        ${text}
+                    </p>
+                </div>
+                <div class="bg-primary/20 flex items-center justify-center aspect-square rounded-full w-10 shrink-0 border border-primary/30">
+                    <span class="material-symbols-outlined text-primary">person</span>
+                </div>
+            </div>
+        `;
+
+        chatInput.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // 2. Kirim pesan ke Backend AI (Ke Server.js tempat ia "Belajar")
+        try {
+            const res = await fetch('http://localhost:3000/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text })
+            });
+            const data = await res.json();
+            
+            // Cetak Jawaban Bot
+            chatBox.innerHTML += `
+                <div class="flex items-start gap-3 mt-4">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0 border-2 border-primary" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAocEuExGar7kUXAgjrVQzbPYSc7WKU3hW3PG7Hku7hO2JO0rWaYph3lCBaK6hXztnIUoPhmwiTv2t0p9ykoMV3vOCcUbNjhcmR1giHuUdXIlqiHELXSXtOz0HDGLpWEDH-Y3z6sqoboGWRRwqD8vAwa4ISYEghAvELAFoZhiUgqau-NFqJ1QGsvElagMF6HQAXjZvsitsXUO7xjVNhDage0avM94mzrGA_v74iwO3VfyCKja_hAerD2HGxRzUYhaPqvjMw7vg0t2k')"></div>
+                    <div class="flex flex-1 flex-col gap-1 items-start">
+                        <div class="flex items-center gap-2">
+                            <p class="text-primary text-[13px] font-semibold leading-normal">Kaka Mangrove</p>
+                        </div>
+                        <div class="text-sm md:text-base font-normal leading-relaxed flex flex-col gap-3 max-w-[90%] rounded-xl rounded-tl-none px-4 py-3 bg-primary/10 border border-primary/20 text-slate-100">
+                            ${data.reply}
+                        </div>
+                    </div>
+                </div>
+            `;
+        } catch(err) {
+            console.error(err);
+            chatBox.innerHTML += '<div class="text-red-500 text-sm mt-4 text-center">Gagal menghubungi otak AI. Server tidak menyala.</div>';
+        }
+        
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+</script>
 </body></html>

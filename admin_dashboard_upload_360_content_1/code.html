@@ -95,7 +95,7 @@
 <p class="text-slate-600 dark:text-slate-400 text-sm">Manage 360° mangrove experiences for Waropen visitors.</p>
 </section>
 <!-- Upload Form -->
-<section class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 p-6 shadow-sm">
+<form id="uploadForm" class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 p-6 shadow-sm">
 <h3 class="text-lg font-semibold mb-6 flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">add_circle</span>
                     Upload 360° Content
@@ -105,13 +105,13 @@
 <div class="space-y-4">
 <div class="flex flex-col gap-2">
 <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Location Title</label>
-<input class="form-input rounded-lg border-primary/20 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12" placeholder="e.g., Kali Biru Panorama" type="text"/>
+<input id="title" name="title" required class="form-input rounded-lg border-primary/20 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12" placeholder="e.g., Kali Biru Panorama" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-sm font-medium text-slate-700 dark:text-slate-300">Initial View Coordinates</label>
 <div class="grid grid-cols-2 gap-2">
-<input class="form-input rounded-lg border-primary/20 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12" placeholder="Yaw (0-360)" type="text"/>
-<input class="form-input rounded-lg border-primary/20 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12" placeholder="Pitch (-90-90)" type="text"/>
+<input id="yaw" name="yaw" type="number" class="form-input rounded-lg border-primary/20 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12" placeholder="Yaw (0-360)"/>
+<input id="pitch" name="pitch" type="number" class="form-input rounded-lg border-primary/20 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 focus:ring-primary focus:border-primary h-12" placeholder="Pitch (-90-90)"/>
 </div>
 </div>
 <div class="flex flex-col gap-2">
@@ -131,8 +131,11 @@
 <div class="border-2 border-dashed border-primary/30 rounded-xl bg-primary/5 aspect-video flex flex-col items-center justify-center p-6 text-center group cursor-pointer hover:border-primary/60 transition-all">
 <span class="material-symbols-outlined text-5xl text-primary/40 group-hover:text-primary mb-3">photo_camera_back</span>
 <p class="text-sm font-medium">Drag &amp; drop your 360° image here</p>
-<p class="text-xs text-slate-500 mt-1">Supports JPG, PNG (Max 20MB)</p>
-<button class="mt-4 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium">Browse Files</button>
+<p class="text-xs text-slate-500 mt-1" id="fileNameDisplay">Supports JPG, PNG (Max 20MB)</p>
+<label class="mt-4 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium cursor-pointer">
+    Browse Files
+    <input id="imageUpload" name="image" type="file" accept="image/jpeg, image/png" class="hidden" onchange="document.getElementById('fileNameDisplay').innerText = this.files[0].name" required />
+</label>
 </div>
 </div>
 </div>
@@ -141,11 +144,11 @@
 <span class="material-symbols-outlined">add_location_alt</span>
                         Add Hotspots
                     </button>
-<button class="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-lg font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-all">
+<button type="submit" class="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-lg font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-all">
                         Publish Virtual Tour
                     </button>
 </div>
-</section>
+</form>
 <!-- Content List -->
 <section class="space-y-4 pb-20 md:pb-8">
 <div class="flex justify-between items-center">
@@ -153,63 +156,13 @@
 <span class="material-symbols-outlined text-primary">list_alt</span>
                         Existing Locations
                     </h3>
-<span class="text-xs font-medium px-2 py-1 rounded bg-primary/10 text-primary uppercase tracking-wider">12 Total</span>
+<span id="totalToursCount" class="text-xs font-medium px-2 py-1 rounded bg-primary/10 text-primary uppercase tracking-wider">0 Total</span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-<!-- Card 1 -->
-<div class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 overflow-hidden shadow-sm flex flex-col">
-<div class="h-32 bg-center bg-cover" data-alt="Panoramic view of mangrove forest roots and water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNkszEAufE7sSuAWwlxcUl27gdpmJXBp-o8pfdTssGWB0zVM9t7kks16_7iPVddRZxU-3Ec15AILADnA0W7q3LUqC__lBn1rIjNEwAz3QKWThopThnVw2FnOgrXhI0Bh1J4tMJ56sBZpi9xGOG8ZCYOmZNmfdeeoA3wzRy0tVTAv6wjCAiNuGkMq3no_6fG0ffrcK1LPH0FRMXyw-yXSJ-YHSREtC_JD2shULlvdYN3XX1tgr8E_yCR-ctmB-oe7C1RYI3TTq0hm8");'></div>
-<div class="p-4 flex-1">
-<h4 class="font-bold text-slate-900 dark:text-slate-100">Kali Biru Central</h4>
-<p class="text-xs text-slate-500 mb-4">Added on Oct 24, 2023</p>
-<div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">ads_click</span> 4 Hotspots</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">volume_up</span> Ambient: On</span>
-</div>
-<div class="flex gap-2">
-<button class="flex-1 py-2 rounded-lg bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-colors">Edit</button>
-<button class="p-2 rounded-lg border border-red-500/20 text-red-500 hover:bg-red-500/10 transition-colors">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 overflow-hidden shadow-sm flex flex-col">
-<div class="h-32 bg-center bg-cover" data-alt="Aerial view of mangrove greenery and waterways" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9zzqOck16RUmLHfGzIt6nOANBHCRIAzcsWhTzecV-bLtU_8f6_zDrw_0uavM3py415liSHTFe4td0V7svtAITC3zsAnr_BN0Ly4T_OJFg3HWrCDzm5sQRic51F4lYovXBPBu_BLh-5ftBd-5BF9cZjl6owb9O6dhgReTWelU2wFU8xnZ1-fMoFJPexlr-NYLP-zy-H7Cx9x15ikoYOEcIg_laX7Euz3Yva-ymz2jZWaBDdIo6YlXFu6F6Ymy76wnzLNFuSePh-08");'></div>
-<div class="p-4 flex-1">
-<h4 class="font-bold text-slate-900 dark:text-slate-100">Mangrove Boardwalk A</h4>
-<p class="text-xs text-slate-500 mb-4">Added on Nov 12, 2023</p>
-<div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">ads_click</span> 7 Hotspots</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">volume_up</span> Ambient: Off</span>
-</div>
-<div class="flex gap-2">
-<button class="flex-1 py-2 rounded-lg bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-colors">Edit</button>
-<button class="p-2 rounded-lg border border-red-500/20 text-red-500 hover:bg-red-500/10 transition-colors">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 overflow-hidden shadow-sm flex flex-col">
-<div class="h-32 bg-center bg-cover" data-alt="Close up of mangrove trees in clear water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuckFkW1i3e4xuFdVH8u3JRqsrm4eDE_LJRCT0aX8raNYCQr15-_5uAfleTblJQXQiWUyt-3KyG1Q8QyWovQEZzqFV7ZwQFqfEnjccYhx1baYjJr1ghoq2yakSv88TWZFk1S8DEwjHuiHd0kq9MmFlRo3nfvmxnVNnXwCG29kcnn-u4bzL61bPMHbby0gBkG099F4CgryyhV6T5vJUlGTbNhq83gQNL3jRR_l-Dqzzef7vYTM4evDca1bEGoQUvpL3h-5p2q5Rigs");'></div>
-<div class="p-4 flex-1">
-<h4 class="font-bold text-slate-900 dark:text-slate-100">Research Zone North</h4>
-<p class="text-xs text-slate-500 mb-4">Added on Dec 05, 2023</p>
-<div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">ads_click</span> 2 Hotspots</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">volume_up</span> Ambient: On</span>
-</div>
-<div class="flex gap-2">
-<button class="flex-1 py-2 rounded-lg bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-colors">Edit</button>
-<button class="p-2 rounded-lg border border-red-500/20 text-red-500 hover:bg-red-500/10 transition-colors">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="toursList">
+    <div class="col-span-full text-center py-8 text-slate-500">
+        <span class="material-symbols-outlined text-4xl mb-2 animate-spin">refresh</span>
+        <p>Memuat daftar konten 360 dari database...</p>
+    </div>
 </div>
 </section>
 </main>
@@ -233,4 +186,76 @@
 <p class="text-[10px] font-medium leading-none">Settings</p>
 </a>
 </nav>
+<script>
+async function loadTours() {
+    try {
+        const res = await fetch('http://localhost:3000/api/tours');
+        const tours = await res.json();
+        
+        const tourList = document.getElementById('toursList');
+        document.getElementById('totalToursCount').innerText = tours.length + ' Total';
+        
+        if(tours.length === 0) {
+            tourList.innerHTML = '<div class="col-span-full text-center py-8 text-slate-500">Belum ada data virtual tour. Silakan upload terlebih dahulu!</div>';
+            return;
+        }
+
+        tourList.innerHTML = '';
+        
+        // Render setiap tour terbaru di atas
+        tours.reverse().forEach(tour => {
+            const card = `
+            <div class="bg-white dark:bg-primary/5 rounded-xl border border-primary/10 overflow-hidden shadow-sm flex flex-col">
+                <div class="h-32 bg-center bg-cover" style='background-image: url("${tour.imagePath}");'></div>
+                <div class="p-4 flex-1">
+                    <h4 class="font-bold text-slate-900 dark:text-slate-100">${tour.title}</h4>
+                    <p class="text-xs text-slate-500 mb-4">Ditambahkan: ${tour.dateAdded}</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">ads_click</span> 0 Hotspots</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">360</span> Ready</span>
+                    </div>
+                </div>
+            </div>`;
+            tourList.innerHTML += card;
+        });
+
+    } catch(err) {
+        document.getElementById('toursList').innerHTML = '<div class="col-span-full text-red-500">Gagal mengambil data dari server. Pastikan Server Node.js berjalan.</div>';
+    }
+}
+
+// Muat daftar saat halaman pertama dibuka
+window.addEventListener('DOMContentLoaded', loadTours);
+
+document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.innerHTML = 'Uploading...';
+    btn.disabled = true;
+
+    try {
+        const formData = new FormData(this);
+        const res = await fetch('http://localhost:3000/api/tours', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await res.json();
+        if(result.success) {
+            this.reset();
+            document.getElementById('fileNameDisplay').innerText = 'Supports JPG, PNG (Max 20MB)';
+            // Otomatis refresh daftar setelah sukses upload!
+            loadTours();
+        } else {
+            alert('Gagal: ' + result.error);
+        }
+    } catch(err) {
+        alert('Terjadi kesalahan jaringan!');
+        console.error(err);
+    } finally {
+        btn.innerHTML = 'Publish Virtual Tour';
+        btn.disabled = false;
+    }
+});
+</script>
 </body></html>

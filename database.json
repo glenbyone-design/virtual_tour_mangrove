@@ -1,0 +1,75 @@
+{
+    "virtualTours": [
+        {
+            "id": 1773768094173,
+            "title": "KAMPUNG TEFARO",
+            "yaw": "0",
+            "pitch": "0",
+            "imagePath": "/uploads/1773768093928.jpg",
+            "dateAdded": "18 Mar 2026"
+        },
+        {
+            "id": 1773768209442,
+            "title": "TEFARO",
+            "yaw": "0",
+            "pitch": "0",
+            "imagePath": "/uploads/1773768209343.jpg",
+            "dateAdded": "18 Mar 2026"
+        }
+    ],
+    "spesies": [
+        {
+            "id": 1,
+            "nama_lokal": "Bakau Kurap",
+            "nama_ilmiah": "Rhizophora mucronata",
+            "deskripsi": "Memiliki akar tunjang yang kuat dan buah berbentuk silindris panjang. Sangat kokoh menahan ombak.",
+            "gambar": "http://localhost:3000/uploads/rhizophora_mucronata_1773842258442.png"
+        },
+        {
+            "id": 2,
+            "nama_lokal": "Api-api Putih",
+            "nama_ilmiah": "Avicennia marina",
+            "deskripsi": "Dikenal dengan akar napas yang muncul ke permukaan tanah seperti pensil. Habitat fauna laut dangkal.",
+            "gambar": "http://localhost:3000/uploads/avicennia_marina_1773842274592.png"
+        },
+        {
+            "id": 3,
+            "nama_lokal": "Pedada",
+            "nama_ilmiah": "Sonneratia alba",
+            "deskripsi": "Memiliki buah berbentuk bulat seperti bola yang dapat dimakan oleh satwa liar tertentu.",
+            "gambar": "http://localhost:3000/uploads/sonneratia_alba_1773842290428.png"
+        }
+    ],
+    "chatKnowledge": [
+        {
+            "keywords": [
+                "akar",
+                "pohon",
+                "tunjang",
+                "bakau"
+            ],
+            "answer": "<p>Ah, bicara soal akar, akar bakau seperti tangan nenek moyang kita menahan laju ombak.</p>"
+        },
+        {
+            "keywords": [
+                "ikan",
+                "kepiting",
+                "hewan",
+                "satwa",
+                "fauna"
+            ],
+            "answer": "<p>Di celah akarnya banyak sekali ikan Kakap, Belanak, dan Kepiting Bakau yang bersembunyi.</p>"
+        },
+        {
+            "keywords": [
+                "waktu",
+                "kapan",
+                "jam",
+                "pagi",
+                "sore"
+            ],
+            "answer": "<p>Waktu terbaik berkunjung adalah saat pagi hari ketika burung-burung bangau putih bermain.</p>"
+        }
+    ],
+    "unansweredQuestions": []
+}

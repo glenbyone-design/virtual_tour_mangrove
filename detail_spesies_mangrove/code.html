@@ -35,7 +35,7 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
 <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 <header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
-<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors flex items-center justify-center">
+<button onclick="history.back()" class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors flex items-center justify-center">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
 <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Species Detail</h2>
@@ -43,7 +43,7 @@
 <main class="flex-1">
 <div class="@container">
 <div class="@[480px]:px-4 @[480px]:py-4">
-<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-primary/20 @[480px]:rounded-xl min-h-[400px] shadow-2xl relative" data-alt="Close up of Red Mangrove prop roots in clear water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDvXn8i0CIOmGeSL4V_MWrWDrv5_fnLO6JmaTrJ66IGcBC6iOps8LdhEXBZDDca-G07jOcnNNJCiO0wCqInn6qJX3088K5fpSj5J0pAMUFJYEIDwoXw1ceFgf_G9V5rmo0sNq_qpVtXx0C0iTvyyvYSEbSXmW9FH8gceIUr0POBdA7GiQj_jv6Cn6ltPcpXvtq_hZRY1cUu0qlD0iHXdf_b6wqYPXsn0Ds70J1hRlDAl1VpLn3yOQ-6LDSf95VUg45RehEXx5kkfM");'>
+<div id="spesiesImage" class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-primary/20 @[480px]:rounded-xl min-h-[400px] shadow-2xl relative" style='background-image: url("https://placehold.co/800x600/276b1e/ffffff?text=Memuat+Gambar...");'>
 <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-60"></div>
 </div>
 </div>
@@ -51,11 +51,11 @@
 <section class="px-4 pt-6 pb-2">
 <div class="flex justify-between items-start">
 <div>
-<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-bold leading-tight tracking-tight">Red Mangrove</h1>
-<h2 class="text-primary text-xl font-medium italic leading-tight mt-1">Rhizophora mangle</h2>
+<h1 id="spesiesNamaLokal" class="text-slate-900 dark:text-slate-100 text-4xl font-bold leading-tight tracking-tight">Memuat...</h1>
+<h2 id="spesiesNamaIlmiah" class="text-primary text-xl font-medium italic leading-tight mt-1">Sabar Kaka...</h2>
 </div>
-<button class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary/20">
-<span class="material-symbols-outlined">bookmark</span>
+<button id="bookmarkBtn" onclick="toggleBookmark()" class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary/20 transition-colors">
+<span id="bookmarkIcon" class="material-symbols-outlined">bookmark</span>
 </button>
 </div>
 <div class="flex gap-2 mt-4">
@@ -66,8 +66,8 @@
 </section>
 <section class="px-4 py-6 space-y-4">
 <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold border-l-4 border-primary pl-3">Scientific Description</h3>
-<p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base">
-                    The Red Mangrove is easily distinguished from other mangrove species by its specialized aerial prop roots which extend from the trunk and lower branches, providing stability in soft, anaerobic soils. The leaves are opposite, elliptical, and leathery, with a dark green upper surface and a paler underside. It is highly adapted to saline environments, actively excluding salt at the root level.
+<p id="spesiesDeskripsi" class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base">
+Sedang menghubungkan ke ensiklopedia...
                 </p>
 </section>
 <section class="px-4 py-6 bg-primary/5 dark:bg-primary/10 my-4">
@@ -76,42 +76,81 @@
                     Environmental Benefits
                 </h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="flex gap-3 p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/5">
-<span class="material-symbols-outlined text-primary mt-1">shield</span>
-<div>
-<p class="font-bold text-slate-900 dark:text-slate-100">Coastal Defense</p>
-<p class="text-xs text-slate-600 dark:text-slate-400">Dense root systems dissipate wave energy and protect shorelines from erosion and storm surges.</p>
+
+<!-- Card 1: Coastal Defense -->
+<div class="relative h-32 overflow-hidden rounded-xl shadow-sm border border-primary/10 cursor-pointer group" onclick="showFaunaModal('Coastal Defense', 'Physical Protection', 'Akar mangrove bertindak sebagai peredam ombak alami. Jaringan akarnya yang rumit memecah energi gelombang laut dan secara efektif melindungi garis pantai dari erosi, badai, serta tsunami.', '../uploads/mangrove_defense_1773841871176.png')">
+    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="../uploads/mangrove_defense_1773841871176.png" alt="Coastal Defense" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-3">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-sm bg-primary/20 p-1 rounded-full">shield</span>
+            <p class="font-bold text-white">Pelindung Pantai</p>
+        </div>
+        <p class="text-xs text-slate-300 mt-1 line-clamp-1">Meredam gelombang dan mencegah erosi abrasi pantai.</p>
+    </div>
 </div>
+
+<!-- Card 2: Carbon Sequestration -->
+<div class="relative h-32 overflow-hidden rounded-xl shadow-sm border border-primary/10 cursor-pointer group" onclick="showFaunaModal('Carbon Sequestration', 'Climate Regulation', 'Hutan mangrove menyerap dan menyimpan karbon biru (Blue Carbon) hingga 4 kali lebih banyak dibandingkan hutan tropis daratan. Karbon ini disimpan sangat lama di dalam sedimen lumpur.', '../uploads/carbon_sequestration_1773841941751.png')">
+    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="../uploads/carbon_sequestration_1773841941751.png" alt="Carbon Sequestration" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-3">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-sm bg-primary/20 p-1 rounded-full">co2</span>
+            <p class="font-bold text-white">Penyerap Karbon</p>
+        </div>
+        <p class="text-xs text-slate-300 mt-1 line-clamp-1">Menyimpan karbon biru jauh melebihi hutan tropis darat.</p>
+    </div>
 </div>
-<div class="flex gap-3 p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/5">
-<span class="material-symbols-outlined text-primary mt-1">co2</span>
-<div>
-<p class="font-bold text-slate-900 dark:text-slate-100">Carbon Sequestration</p>
-<p class="text-xs text-slate-600 dark:text-slate-400">Stores significantly more carbon per acre than tropical rainforests, helping mitigate climate change.</p>
+
+<!-- Card 3: Water Filtration -->
+<div class="relative h-32 overflow-hidden rounded-xl shadow-sm border border-primary/10 cursor-pointer group" onclick="showFaunaModal('Water Filtration', 'Ecosystem Services', 'Sistem perakaran mangrove bekerja seperti filter raksasa yang menyaring sedimen dan menyerap nutrisi berlebihan serta polutan dari air sungai sebelum mengalir ke laut lepas.', '../uploads/water_filtration_1773841958309.png')">
+    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="../uploads/water_filtration_1773841958309.png" alt="Water Filtration" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-3">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-sm bg-primary/20 p-1 rounded-full">water_drop</span>
+            <p class="font-bold text-white">Saringan Air Alami</p>
+        </div>
+        <p class="text-xs text-slate-300 mt-1 line-clamp-1">Akarnya menyaring sedimen dan menjernihkan air sungai.</p>
+    </div>
 </div>
+
+<!-- Card 4: Nursery Habitat -->
+<div class="relative h-32 overflow-hidden rounded-xl shadow-sm border border-primary/10 cursor-pointer group" onclick="showFaunaModal('Nursery Habitat', 'Biodiversity', 'Akar mangrove yang rapat di dalam air menjadi tempat berlindung yang sangat aman bagi bayi-bayi ikan, udang, dan biota laut lainnya dari predator besar.', '../uploads/mangrove_nursery_1773841890153.png')">
+    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="../uploads/mangrove_nursery_1773841890153.png" alt="Nursery Habitat" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-3">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-sm bg-primary/20 p-1 rounded-full">set_meal</span>
+            <p class="font-bold text-white">Habitat Pembibitan</p>
+        </div>
+        <p class="text-xs text-slate-300 mt-1 line-clamp-1">Rumah aman bagi larva ikan dan berbagai biota laut.</p>
+    </div>
 </div>
+
 </div>
 </section>
 <section class="px-4 py-6 pb-24">
 <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-4">Associated Fauna</h3>
 <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
-<div class="flex-none w-40">
+<div class="flex-none w-40 cursor-pointer hover:scale-105 transition-transform" onclick="showFaunaModal('Scarlet Ibis', 'Aves', 'Burung air dengan warna merah cerah ini sering berlindung dan mencari makan di area hutan bakau yang kaya akan udang kecil dan kepiting.', '../uploads/ibis_bird_1773841835095.png')">
 <div class="aspect-square rounded-xl bg-primary/10 overflow-hidden mb-2">
-<img alt="Scarlet Ibis" class="w-full h-full object-cover" data-alt="Bright red bird perched in green foliage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH68vLf-RUTDcJ2VOgCTgw5mB-N5w3KrR9S_q3Bq1lhzlx75Z2agEaoiTkwNbsG25iyO3RkafiYL-9c6JjkrJ92xmgMN7XfZ_3luVcBTwC74jrS3rEFlmLWhf8ktysmSstcN1ts-lVYd-Px9AO5RxxqTecqcuuv4DwcCw5-AyT-ElgTDHcUG5n6W-bChBsnEeAz8d_ImKkn1HlTG_AtNzaiWNC84uZIcybIbFLVJFJe3sN3FYN133aVpJl1xZxSqNTTQHle0LbMYE"/>
+<img alt="Scarlet Ibis" class="w-full h-full object-cover" src="../uploads/ibis_bird_1773841835095.png"/>
 </div>
 <p class="text-sm font-bold text-slate-900 dark:text-slate-100">Scarlet Ibis</p>
 <p class="text-xs text-primary">Aves</p>
 </div>
-<div class="flex-none w-40">
+<div class="flex-none w-40 cursor-pointer hover:scale-105 transition-transform" onclick="showFaunaModal('Mangrove Crab', 'Crustacean', 'Kepiting bakau memiliki peran penting dalam mendaur ulang nutrisi daun mangrove yang jatuh dan membuat lubang pernapasan di lumpur.', '../uploads/mangrove_crab_1773841851899.png')">
 <div class="aspect-square rounded-xl bg-primary/10 overflow-hidden mb-2">
-<img alt="Mangrove Crab" class="w-full h-full object-cover" data-alt="Crab climbing on mangrove roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_tL83LVjNn1zGqUuEqR9zFSSTo9Ms6pxx6xHWyor9hLF-xZ8jbnwv297duANLmFCsTAYoYV0vYCjulXLhYJDe9QN3NQz8wHPMWbKqTHiyfIqcVn2aYVWYaeNxDHqDNZ1J3C0pD9KkMt2sj82RRAdWh9ImH0igRTEoUUhe0Zju_Gjfjx6UwQoIB0-UwHTXmDPwkWsTVxrzvcDxuZAnr1OrNPkJOCAeezEpQE7Nm11aQK-8SE1e_qsslpi5GzDnNzDYQ2VIF9H8Gw"/>
+<img alt="Mangrove Crab" class="w-full h-full object-cover" src="../uploads/mangrove_crab_1773841851899.png"/>
 </div>
 <p class="text-sm font-bold text-slate-900 dark:text-slate-100">Mangrove Crab</p>
 <p class="text-xs text-primary">Crustacean</p>
 </div>
-<div class="flex-none w-40">
+<div class="flex-none w-40 cursor-pointer hover:scale-105 transition-transform" onclick="showFaunaModal('Juvenile Lemon Shark', 'Elasmobranch', 'Akar mangrove berfungsi sebagai tempat istirahat dan perlindungan yang aman bagi anak-anak ikan hiu dari predator yang lebih besar.', '../uploads/lemon_shark_1773841922588.png')">
 <div class="aspect-square rounded-xl bg-primary/10 overflow-hidden mb-2">
-<img alt="Lemon Shark" class="w-full h-full object-cover" data-alt="Small shark swimming in shallow clear water near roots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyxV90Z5_u2ZzQiSb8YrOH9dFZT6IJfC_xbxva0MDfRlkKNK5UCPctHrvUfPCWwLBsxB1te5t_hoNKGzsgyyGkoqn6MjLrhdueGWw14nNAoo1doqTdz36LypbPTtUl99U74e2bNTpKyT0Chzsvplj6Qwa-H_85pLcuwiYKV8SnFQE4_0TcUAsXl4lybNrc8QazSPswyePup6GEhTw55zW8bsnOggvlN04TJ_LqkRbZEj960xv8JU0mGBpE_pkuI_krkGuFNlUVhI"/>
+<img alt="Lemon Shark" class="w-full h-full object-cover" src="../uploads/lemon_shark_1773841922588.png"/>
 </div>
 <p class="text-sm font-bold text-slate-900 dark:text-slate-100">Juvenile Lemon Shark</p>
 <p class="text-xs text-primary">Elasmobranch</p>
@@ -120,23 +159,45 @@
 </section>
 </main>
 <nav class="fixed bottom-0 left-0 right-0 z-20 flex border-t border-primary/20 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg px-4 pb-4 pt-2 shadow-lg">
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="../virtual_tour_360_1/code.html">
 <span class="material-symbols-outlined">search</span>
 <p class="text-[10px] font-medium uppercase tracking-widest">Explore</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="../ensiklopedia_spesies_1/code.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
 <p class="text-[10px] font-bold uppercase tracking-widest">Encyclopedia</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
 <span class="material-symbols-outlined">map</span>
 <p class="text-[10px] font-medium uppercase tracking-widest">Map</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-<span class="material-symbols-outlined">bookmarks</span>
-<p class="text-[10px] font-medium uppercase tracking-widest">Saved</p>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="../dashboard_statistik_admin_1/code.html">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Admin</p>
 </a>
 </nav>
+
+<!-- Modal Fauna -->
+<div id="faunaModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+<div class="bg-background-light dark:bg-background-dark w-11/12 max-w-sm rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+    <div class="h-48 w-full bg-slate-200">
+        <img id="faunaModalImg" class="w-full h-full object-cover" src="" alt="Fauna">
+    </div>
+    <div class="p-5">
+        <div class="flex justify-between items-start mb-2">
+            <div>
+                <h3 id="faunaModalTitle" class="text-xl font-bold text-slate-900 dark:text-slate-100">...</h3>
+                <p id="faunaModalType" class="text-xs font-semibold text-primary uppercase tracking-wider">...</p>
+            </div>
+            <button onclick="closeFaunaModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-slate-200 hover:text-red-500 transition-colors">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+        </div>
+        <p id="faunaModalDesc" class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">...</p>
+    </div>
+</div>
+</div>
+
 </div>
 <style>
         .no-scrollbar::-webkit-scrollbar {
@@ -147,4 +208,82 @@
             scrollbar-width: none;
         }
     </style>
+<script>
+    async function loadDetail() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestID = urlParams.get('id');
+        
+        if(!requestID) {
+            document.getElementById('spesiesNamaLokal').innerText = "Spesies Tidak Ditemukan";
+            return;
+        }
+
+        try {
+            const response = await fetch('http://localhost:3000/api/spesies');
+            const data = await response.json();
+            
+            // Cari spesies yang ID nya cocok
+            const spesies = data.find(s => s.id == requestID);
+            
+            if(spesies) {
+                document.getElementById('spesiesNamaLokal').innerText = spesies.nama_lokal;
+                document.getElementById('spesiesNamaIlmiah').innerText = spesies.nama_ilmiah;
+                document.getElementById('spesiesDeskripsi').innerText = spesies.deskripsi;
+                
+                // Ubah gambar latar
+                const imgContainer = document.getElementById('spesiesImage');
+                imgContainer.style.backgroundImage = `url("${spesies.gambar}")`;
+            } else {
+                document.getElementById('spesiesNamaLokal').innerText = "Spesies Tidak Ditemukan";
+                document.getElementById('spesiesNamaIlmiah').innerText = "-";
+            }
+            
+        } catch(err) {
+            console.error("Gagal muat:", err);
+            document.getElementById('spesiesNamaLokal').innerText = "Gagal Menyambungkan ke Server";
+        }
+    }
+    
+    window.addEventListener('DOMContentLoaded', loadDetail);
+    
+    let isBookmarked = false;
+    function toggleBookmark() {
+        isBookmarked = !isBookmarked;
+        const icon = document.getElementById('bookmarkIcon');
+        const btn = document.getElementById('bookmarkBtn');
+        
+        if(isBookmarked) {
+            icon.style.fontVariationSettings = "'FILL' 1";
+            btn.classList.add('bg-primary/20');
+        } else {
+            icon.style.fontVariationSettings = "'FILL' 0";
+            btn.classList.remove('bg-primary/20');
+        }
+        
+        // Simpan ke local storage atau tunjukkan notifikasi mini
+        // alert(isBookmarked ? "Disimpan ke Bookmark!" : "Dihapus dari Bookmark");
+    }
+
+    // Modal Handle untuk Fauna
+    function showFaunaModal(name, type, description, imgSrc) {
+        document.getElementById('faunaModalImg').src = imgSrc;
+        document.getElementById('faunaModalTitle').innerText = name;
+        document.getElementById('faunaModalType').innerText = type;
+        document.getElementById('faunaModalDesc').innerText = description;
+        
+        const modal = document.getElementById('faunaModal');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100', 'pointer-events-auto');
+        modal.children[0].classList.remove('scale-95');
+        modal.children[0].classList.add('scale-100');
+    }
+
+    function closeFaunaModal() {
+        const modal = document.getElementById('faunaModal');
+        modal.classList.remove('opacity-100', 'pointer-events-auto');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.children[0].classList.remove('scale-100');
+        modal.children[0].classList.add('scale-95');
+    }
+</script>
 </body></html>

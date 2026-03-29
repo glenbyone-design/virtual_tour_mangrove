@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Kelola Destinasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2D5A27",
+                        secondary: "#8B5A2B",
+                        accent: "#0077BE",
+                        "background-dark": "#151f13",
+                    },
+                    fontFamily: { display: ["Lexend", "sans-serif"] },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Lexend', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 min-h-screen">
+    
+    <nav class="bg-white/5 border-b border-primary/20 sticky top-0 z-50 backdrop-blur-md">
+        <div class="h-16 flex items-center justify-between px-6">
+            <div class="flex items-center gap-3">
+                <button onclick="history.back()" class="p-2 hover:bg-white/10 rounded-full cursor-pointer"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h1 class="font-bold text-xl tracking-tight text-white/90">Kelola Destinasi Pilihan</h1>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-6 mt-6">
+        <div class="bg-primary/10 border border-primary/30 p-4 rounded-xl mb-8 flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary">info</span>
+            <div>
+                <h3 class="font-bold text-primary-light">Panduan Admin</h3>
+                <p class="text-sm text-slate-400 mt-1">Gunakan halaman ini untuk mengubah 3 (tiga) destinasi pilihan yang akan tampil secara masif di Halaman Utama (Beranda). Anda bisa mengganti foto, judul, dan deksripsi untuk menarik kunjungan turis.</p>
+            </div>
+        </div>
+
+        <div id="formsContainer" class="space-y-12">
+            <!-- Forms injected here -->
+            <div class="animate-pulse bg-white/5 h-64 rounded-xl"></div>
+        </div>
+    </main>
+
+    <script>
+        async function fetchDestinasi() {
+            try {
+                const res = await fetch('http://localhost:3000/api/destinasi');
+                const data = await res.json();
+                renderForms(data);
+            } catch (err) {
+                console.error("Gagal memuat:", err);
+            }
+        }
+
+        function renderForms(data) {
+            const container = document.getElementById('formsContainer');
+            container.innerHTML = '';
+            
+            data.forEach((item, index) => {
+                container.innerHTML += `
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-primary/20 px-4 py-2 rounded-bl-2xl font-bold text-xs">Destinasi ${item.id}</div>
+                        
+                        <div class="flex flex-col md:flex-row gap-8 mt-2">
+                            <!-- Preview Image -->
+                            <div class="w-full md:w-1/3">
+                                <label class="block text-sm font-semibold mb-2">Gambar Sampul Saat Ini</label>
+                                <div class="rounded-xl overflow-hidden aspect-[4/5] relative bg-black">
+                                    <img id="preview-${item.id}" src="${item.img}" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            
+                            <!-- Form Fields -->
+                            <div class="flex-1 space-y-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-slate-300">Judul Destinasi</label>
+                                    <input type="text" id="title-${item.id}" value="${item.title}" class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-slate-300">Kategori (Maks 2 Kata)</label>
+                                    <input type="text" id="cat-${item.id}" value="${item.category}" class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-slate-300">Deskripsi Singkat</label>
+                                    <textarea id="desc-${item.id}" rows="3" class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none">${item.desc}</textarea>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-slate-300">Ganti Foto Sampul Baru</label>
+                                    <input type="file" id="file-${item.id}" accept="image/*" class="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-primary file:text-white hover:file:bg-primary/80 transition-all cursor-pointer">
+                                </div>
+
+                                <div class="pt-4">
+                                        <button onclick="saveDestinasi(${item.id}, this)" class="w-full bg-primary hover:bg-primary/80 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-transform transform active:scale-95">
+                                        <span class="material-symbols-outlined">save</span> Simpan Perubahan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        async function saveDestinasi(id, btn) {
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Menyimpan...';
+            btn.disabled = true;
+
+            const fd = new FormData();
+            fd.append('title', document.getElementById('title-'+id).value);
+            fd.append('category', document.getElementById('cat-'+id).value);
+            fd.append('desc', document.getElementById('desc-'+id).value);
+            
+            const fileInput = document.getElementById('file-'+id);
+            if(fileInput.files[0]) {
+                fd.append('image', fileInput.files[0]);
+            }
+
+            try {
+                const res = await fetch('http://localhost:3000/api/destinasi/'+id, {
+                    method: 'POST',
+                    body: fd
+                });
+                const result = await res.json();
+                
+                if(result.success) {
+                    btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Berhasil Disimpan!';
+                    btn.classList.add('bg-green-600');
+                    if(result.data.img) {
+                        document.getElementById('preview-'+id).src = result.data.img;
+                    }
+                    setTimeout(() => {
+                        btn.innerHTML = '<span class="material-symbols-outlined">save</span> Simpan Perubahan';
+                        btn.disabled = false;
+                        btn.classList.remove('bg-green-600');
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Gagal menyimpan ke server");
+                btn.innerHTML = '<span class="material-symbols-outlined">save</span> Simpan Perubahan';
+                btn.disabled = false;
+            }
+        }
+
+        fetchDestinasi();
+    </script>
+</body>
+</html>

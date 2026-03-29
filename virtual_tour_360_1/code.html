@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -44,13 +45,13 @@
   </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
 <div class="relative flex h-screen w-full flex-col overflow-hidden">
-<div class="absolute inset-0 z-0 panoramic-bg" data-alt="Panoramic immersive view of a dense mangrove forest with stilt roots and calm water"></div>
+<div id="panorama" class="absolute inset-0 z-0"></div>
 <div class="relative z-10 flex items-center bg-background-dark/60 backdrop-blur-md p-4 justify-between border-b border-primary/20">
-<div class="text-slate-100 flex size-10 items-center justify-center rounded-full bg-primary/20 cursor-pointer">
+<div onclick="window.location.href='../index.html'" class="text-slate-100 flex size-10 items-center justify-center rounded-full bg-primary/20 cursor-pointer hover:bg-primary/50 transition-colors">
 <span class="material-symbols-outlined">arrow_back</span>
 </div>
 <div class="flex flex-col items-center">
-<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight">Hutan Bakau Kali Biru</h2>
+<h2 id="tourTitle" class="text-slate-100 text-lg font-bold leading-tight tracking-tight">Memuat Data...</h2>
 <p class="text-primary text-[10px] uppercase tracking-widest font-bold">Waropen, Papua</p>
 </div>
 <div class="flex items-center">
@@ -59,8 +60,8 @@
 </div>
 </div>
 </div>
-<div class="relative flex-1 @container">
-<div class="absolute top-20 left-1/2 -translate-x-1/2 group cursor-pointer">
+<div class="relative flex-1 @container pointer-events-none">
+<div onclick="toggleSpeciesInfo(true)" class="absolute top-20 left-1/2 -translate-x-1/2 group cursor-pointer pointer-events-auto hover:scale-110 transition-transform">
 <div class="flex flex-col items-center gap-2">
 <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center animate-pulse hotspot-glow">
 <div class="w-3 h-3 bg-white rounded-full"></div>
@@ -68,7 +69,7 @@
 <span class="bg-background-dark/80 text-white text-xs px-2 py-1 rounded shadow-lg backdrop-blur-sm">Bakau Hitam (Rhizophora)</span>
 </div>
 </div>
-<div class="absolute bottom-40 right-[20%] group cursor-pointer">
+<div onclick="toggleSpeciesInfo(true)" class="absolute bottom-40 right-[20%] group cursor-pointer pointer-events-auto hover:scale-110 transition-transform">
 <div class="flex flex-col items-center gap-2">
 <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center animate-pulse hotspot-glow">
 <div class="w-3 h-3 bg-white rounded-full"></div>
@@ -76,38 +77,38 @@
 <span class="bg-background-dark/80 text-white text-xs px-2 py-1 rounded shadow-lg backdrop-blur-sm">Akar Napas</span>
 </div>
 </div>
-<div class="absolute bottom-24 left-6 max-w-[280px] bg-background-dark/90 border border-primary/30 p-4 rounded-xl backdrop-blur-lg shadow-2xl">
+<div id="speciesDetailCard" class="absolute bottom-24 left-6 max-w-[280px] bg-background-dark/90 border border-primary/30 p-4 rounded-xl backdrop-blur-lg shadow-2xl pointer-events-auto hidden transition-opacity">
 <div class="flex justify-between items-start mb-2">
 <h3 class="text-primary font-bold text-sm uppercase">Detail Spesies</h3>
-<span class="material-symbols-outlined text-slate-400 text-sm cursor-pointer">close</span>
+<span onclick="toggleSpeciesInfo(false)" class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-white transition-colors">close</span>
 </div>
 <div class="rounded-lg overflow-hidden mb-3 h-24 bg-primary/10">
-<img alt="Mangrove close up" class="w-full h-full object-cover" data-alt="Close up of a mangrove tree stilt roots in water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Hj8TJ661zwLvEbRUVVoYvJo8wkBwEXV3hTw4Uq8SEWbxK4VcXAkiHRbQXYq98tFNGgt_KlRU1op3HxZ8WxhAsJQlAz4RXVqnepKKioQm6islJkLx_KoNaud4Z9jZixZxGqfgo0VVxg1kr2wpwGJqJBVTmO5echBYisH8dj1Tj54RApTtRkleEtwNQrT-7X03l3S2qYnqt37S-Cl-XTgocLcbGP9wJmPhqoZbky0Kizlsy3HJRlDZbVdcVrpaY-p29vi-tgXugoE"/>
+<img alt="Mangrove close up" class="w-full h-full object-cover" src="../uploads/rhizophora_mucronata_1773842258442.png"/>
 </div>
 <h4 class="text-slate-100 font-bold text-base mb-1">Rhizophora mucronata</h4>
 <p class="text-slate-300 text-xs leading-relaxed mb-3">Bakau hitam memiliki akar tunjang yang besar untuk menopang pohon di substrat lumpur yang lembek.</p>
-<button class="w-full bg-primary py-2 rounded-lg text-xs font-bold text-white flex items-center justify-center gap-2">
+<button onclick="window.location.href='../ensiklopedia_spesies_1/code.html'" class="w-full bg-primary py-2 rounded-lg text-xs font-bold text-white flex items-center justify-center gap-2 hover:bg-primary/80 transition-colors">
 <span class="material-symbols-outlined text-sm">menu_book</span>
                     Pelajari Lebih Lanjut
                 </button>
 </div>
-<div class="absolute top-4 right-4 flex flex-col gap-3">
-<button class="size-12 rounded-full bg-background-dark/80 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary shadow-lg">
+<div class="absolute top-4 right-4 flex flex-col gap-3 pointer-events-auto">
+<button id="btnAudioToggle" onclick="toggleAudio()" class="size-12 rounded-full bg-background-dark/80 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary shadow-lg hover:bg-primary/20 transition-colors">
 <span class="material-symbols-outlined">graphic_eq</span>
 </button>
-<button class="size-12 rounded-full bg-background-dark/80 backdrop-blur-md border border-primary/30 flex items-center justify-center text-slate-100 shadow-lg">
+<button id="btnExplore" onclick="toggleAutoRotate()" class="size-12 rounded-full bg-background-dark/80 backdrop-blur-md border border-primary/30 flex items-center justify-center text-slate-100 shadow-lg hover:bg-primary/20 transition-colors">
 <span class="material-symbols-outlined">explore</span>
 </button>
 </div>
-<div class="absolute bottom-24 right-4 flex flex-col gap-1">
-<button class="size-10 flex items-center justify-center rounded-t-lg bg-background-dark/80 backdrop-blur-md border-x border-t border-primary/20 text-slate-100">
+<div class="absolute bottom-24 right-4 flex flex-col gap-1 pointer-events-auto">
+<button id="btnZoomIn" class="size-10 flex items-center justify-center rounded-t-lg bg-background-dark/80 backdrop-blur-md border-x border-t border-primary/20 text-slate-100 hover:bg-primary/50 transition-colors">
 <span class="material-symbols-outlined">add</span>
 </button>
-<button class="size-10 flex items-center justify-center rounded-b-lg bg-background-dark/80 backdrop-blur-md border border-primary/20 text-slate-100">
+<button id="btnZoomOut" class="size-10 flex items-center justify-center rounded-b-lg bg-background-dark/80 backdrop-blur-md border border-primary/20 text-slate-100 hover:bg-primary/50 transition-colors">
 <span class="material-symbols-outlined">remove</span>
 </button>
 </div>
-<div class="absolute top-4 left-4">
+<div class="absolute top-4 left-4 pointer-events-auto">
 <div class="bg-background-dark/80 backdrop-blur-md border border-primary/30 rounded-lg p-1 pr-4 flex items-center gap-3">
 <div class="size-10 rounded-md overflow-hidden bg-primary/20 flex items-center justify-center text-primary">
 <span class="material-symbols-outlined">search</span>
@@ -117,22 +118,114 @@
 </div>
 </div>
 <div class="flex gap-2 border-t border-primary/20 bg-background-dark px-4 pb-4 pt-2 z-20">
-<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 hover:text-primary transition-colors" href="../beranda_landing_1/code.html">
 <span class="material-symbols-outlined">home</span>
 <p class="text-[10px] font-medium leading-normal tracking-wide">Beranda</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="../virtual_tour_360_1/code.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">explore</span>
 <p class="text-[10px] font-bold leading-normal tracking-wide">Jelajah</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 hover:text-primary transition-colors" href="../ensiklopedia_spesies_1/code.html">
 <span class="material-symbols-outlined">school</span>
 <p class="text-[10px] font-medium leading-normal tracking-wide">Edukasi</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 hover:text-primary transition-colors" href="../index.html">
 <span class="material-symbols-outlined">person</span>
 <p class="text-[10px] font-medium leading-normal tracking-wide">Profil</p>
 </a>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script>
+    let viewer;
+    async function initTour() {
+        try {
+            const res = await fetch('http://localhost:3000/api/tours');
+            const tours = await res.json();
+            
+            if(tours.length > 0) {
+                // Mengambil data upload terakhir (terbaru)
+                const latestTour = tours[tours.length - 1];
+                
+                // Ubah Judul Halaman
+                document.getElementById('tourTitle').innerText = latestTour.title;
+                
+                // Putar Gambar 360 dari Database Database
+                viewer = pannellum.viewer('panorama', {
+                    "type": "equirectangular",
+                    // Gunakan alamat localhost:3000 + /uploads/...
+                    "panorama": "http://localhost:3000" + latestTour.imagePath, 
+                    "autoLoad": true,
+                    "showControls": false,
+                    "yaw": parseInt(latestTour.yaw) || 0,
+                    "pitch": parseInt(latestTour.pitch) || 0,
+                    "autoRotate": -2,
+                    "mouseZoom": true,
+                    "keyboardZoom": true
+                });
+                
+                // Setup kontrol tombol zoom
+                document.getElementById('btnZoomIn').addEventListener('click', () => {
+                    viewer.setHfov(viewer.getHfov() - 10);
+                });
+                document.getElementById('btnZoomOut').addEventListener('click', () => {
+                    viewer.setHfov(viewer.getHfov() + 10);
+                });
+            } else {
+                document.getElementById('tourTitle').innerText = "Belum Ada Konten";
+            }
+        } catch(err) {
+            console.error("Gagal memuat tour:", err);
+        }
+    }
+    
+    // Handle UI Toggles
+    function toggleSpeciesInfo(show) {
+        const card = document.getElementById('speciesDetailCard');
+        if (show) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    }
+
+    let isAudioPlaying = true;
+    function toggleAudio() {
+        isAudioPlaying = !isAudioPlaying;
+        const btn = document.getElementById('btnAudioToggle');
+        if (isAudioPlaying) {
+            btn.classList.add('text-primary');
+            btn.classList.remove('text-slate-100');
+            // Jika ada objek audio, jalankan di sini
+        } else {
+            btn.classList.remove('text-primary');
+            btn.classList.add('text-slate-100');
+        }
+    }
+
+    let isAutoRotate = true;
+    function toggleAutoRotate() {
+        isAutoRotate = !isAutoRotate;
+        const btn = document.getElementById('btnExplore');
+        if (isAutoRotate) {
+            btn.classList.add('text-primary');
+            btn.classList.remove('text-slate-100');
+            // Aktifkan rotasi
+            if (viewer) {
+                viewer.stopAutoRotate();
+                viewer.startAutoRotate(-2); // kecepatan rotasi
+            }
+        } else {
+            btn.classList.remove('text-primary');
+            btn.classList.add('text-slate-100');
+            // Hentikan rotasi
+            if (viewer) viewer.stopAutoRotate();
+        }
+    }
+    
+    // Jalankan fungsi saat web dibuka
+    initTour();
+</script>
 </div>
 </div>
 </body></html>
